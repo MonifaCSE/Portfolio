@@ -1,0 +1,44 @@
+:root {
+  /* Color Palette - DESIGN.md §6 */
+  --ink-950: #0b0c0e;
+  --ink-900: #111316;
+  --ink-850: #16191d;
+  --ink-800: #1c2025;
+  --ink-700: #2a2f36;
+  --ink-600: #3a414a;
+
+  --text-mute: #8c939d;
+  --text-soft: #b5bbc3;
+  --bone: #ece8e1;
+  --paper: #f5f2ec;
+
+  --ember-400: #f08a57;
+  --ember-500: #e8743b;
+  --ember-600: #c85a24;
+  --ember-wash: rgba(232, 116, 59, 0.10);
+
+  --danger: #ff7a7a;
+  --success: #6fcf97;
+
+  /* Typography Fallbacks */
+  --font-serif: "Instrument Serif", ui-serif, Georgia, serif;
+  --font-sans: "Geist", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-mono: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, monospace;
+
+  /* Spacing Scale - DESIGN.md §8 */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 96px;
+  --space-10: 128px;
+  --space-11: 192px;
+
+  /* Easings - DESIGN.md §17 */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+}

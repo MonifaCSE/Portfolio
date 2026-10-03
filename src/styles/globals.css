@@ -1,0 +1,79 @@
+@import "./tokens.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    color-scheme: dark;
+    background-color: var(--ink-950);
+    color: var(--text-soft);
+    font-family: var(--font-sans);
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background-color: var(--ink-950);
+    color: var(--text-soft);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* Headings typography default */
+  h1, h2, h3, h4, h5, h6 {
+    color: var(--bone);
+    font-family: var(--font-serif);
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  /* Custom selection */
+  ::selection {
+    background-color: var(--ember-wash);
+    color: var(--bone);
+  }
+
+  /* Focus ring styling - WCAG AA compliance */
+  :focus-visible {
+    outline: 2px solid var(--ember-400);
+    outline-offset: 2px;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .text-pretty {
+    text-wrap: pretty;
+  }
+  .accent-word {
+    font-style: italic;
+    color: var(--ember-500);
+  }
+  .hairline-bottom {
+    border-bottom: 1px solid var(--ink-700);
+  }
+  .hairline-top {
+    border-top: 1px solid var(--ink-700);
+  }
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto !important;
+  }
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
