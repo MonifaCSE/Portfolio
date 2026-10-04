@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { getPublishedProjects, getProjectBySlug } from "@/lib/content";
+import { getPublishedProjects, getProjectBySlug, getSiteData } from "@/lib/content";
 import { StatusBadge } from "@/components/ui/StatusBadge";
 import { Tag } from "@/components/ui/Tag";
 import { TextLink } from "@/components/ui/TextLink";
@@ -9,6 +9,7 @@ import { FactSheet } from "@/components/project/FactSheet";
 import { FeatureList } from "@/components/project/FeatureList";
 import { BrowserFrame } from "@/components/project/BrowserFrame";
 import { MDXRenderer } from "@/components/project/MDXRenderer";
+import { CreativeWorkJsonLd } from "@/components/seo/JsonLd";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 
 export interface ProjectPageProps {
@@ -16,6 +17,9 @@ export interface ProjectPageProps {
     slug: string;
   };
 }
+
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://monifasultana.com";
+const siteData = getSiteData();
 
 // Statically generate every published project route at build time for SSG & GitHub Pages
 export async function generateStaticParams() {
@@ -32,6 +36,17 @@ export async function generateMetadata({ params }: ProjectPageProps): Promise<Me
   return {
     title: `${project.title}`,
     description: project.tagline,
+    openGraph: {
+      title: `${project.title} — Monifa Sultana`,
+      description: project.tagline,
+      url: `${siteUrl}/projects/${project.slug}`,
+      type: "article",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${project.title} — Monifa Sultana`,
+      description: project.tagline,
+    },
   };
 }
 
@@ -51,6 +66,14 @@ export default function ProjectDetailPage({ params }: ProjectPageProps) {
 
   return (
     <article className="py-12 md:py-20 bg-ink-950 min-h-screen">
+      <CreativeWorkJsonLd
+        title={project.title}
+        description={project.tagline}
+        url={`${siteUrl}/projects/${project.slug}`}
+        dateCreated={project.year}
+        creatorName={siteData.name}
+      />
+
       <div className="max-w-content mx-auto px-5 sm:px-8 space-y-12 md:space-y-16">
         {/* Top Breadcrumb & Navigation */}
         <div className="flex items-center justify-between text-xs font-mono text-textMute hairline-bottom pb-4">

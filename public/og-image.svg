@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#0B0C0E"/>
+  <rect x="40" y="40" width="1120" height="550" rx="16" fill="#111316" stroke="#2A2F36" stroke-width="2"/>
+  
+  <!-- Subtle Grid Pattern -->
+  <g opacity="0.05" stroke="#ECE8E1" stroke-width="1">
+    <line x1="100" y1="40" x2="100" y2="590"/>
+    <line x1="300" y1="40" x2="300" y2="590"/>
+    <line x1="500" y1="40" x2="500" y2="590"/>
+    <line x1="700" y1="40" x2="700" y2="590"/>
+    <line x1="900" y1="40" x2="900" y2="590"/>
+    <line x1="1100" y1="40" x2="1100" y2="590"/>
+  </g>
+
+  <!-- Eyebrow -->
+  <text x="100" y="160" fill="#E8743B" font-family="monospace" font-size="20" font-weight="bold" letter-spacing="4">
+    WEB DEVELOPER · CSE LECTURER
+  </text>
+
+  <!-- Title -->
+  <text x="100" y="260" fill="#ECE8E1" font-family="serif" font-size="64" font-weight="normal">
+    Monifa Sultana
+  </text>
+
+  <!-- Tagline -->
+  <text x="100" y="340" fill="#B5BBC3" font-family="sans-serif" font-size="28">
+    Web applications, built carefully — and explained clearly.
+  </text>
+
+  <!-- Project Pillars -->
+  <g font-family="monospace" font-size="18" fill="#8C939D">
+    <text x="100" y="460">• E-commerce Management Systems</text>
+    <text x="100" y="495">• Institute &amp; Agency Platforms</text>
+    <text x="100" y="530">• Computer Science Instruction</text>
+  </g>
+
+  <!-- Brand Glyph Motif -->
+  <g transform="translate(920, 360)">
+    <rect x="0" y="0" width="120" height="20" rx="4" fill="#E8743B"/>
+    <rect x="20" y="30" width="120" height="20" rx="4" fill="#16191D" stroke="#3A414A" stroke-width="2"/>
+    <rect x="40" y="60" width="120" height="20" rx="4" fill="#16191D" stroke="#3A414A" stroke-width="2"/>
+  </g>
+</svg>

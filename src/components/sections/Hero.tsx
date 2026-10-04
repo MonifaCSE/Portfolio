@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Button } from "@/components/ui/Button";
-import { HeroFallback } from "@/components/three/HeroFallback";
+import { HeroSceneLoader } from "@/components/three/HeroSceneLoader";
 import { ArrowDown } from "lucide-react";
 
 export interface HeroProps {
@@ -48,9 +48,9 @@ export const Hero: React.FC<HeroProps> = ({ siteData }) => {
             </div>
           </div>
 
-          {/* Right Column: Exploded Stack 2D Diagram (Cols 7-12) */}
+          {/* Right Column: Exploded Stack 3D Scene Loader with Fallback (Cols 7-12) */}
           <div className="lg:col-span-5 relative w-full flex items-center justify-center">
-            <HeroFallback />
+            <HeroSceneLoader />
           </div>
         </div>
       </div>
