@@ -71,9 +71,9 @@ The site is built as a **fully static web application (`output: 'export'`) deplo
 |---|---|---|---|
 | 🚨 High | Confirmation of site brand name & location spelling (`Chattogram` vs `Chittagong`) | Header, Footer, SEO | `NEEDS_CONFIRMATION` (Q-04) |
 | 🚨 High | Confirmed public contact details (email, phone, LinkedIn URL, GitHub URL) | Contact form, Footer | `NEEDS_CONFIRMATION` (Q-13) |
-| 🚨 High | Primary & secondary screenshots for BuildHub (storefront + admin) | Home, Project Detail | `NEEDS_CONFIRMATION` |
-| 🚨 High | Primary & secondary screenshots for Starfair (course page + admin/flipbook) | Home, Project Detail | `NEEDS_CONFIRMATION` |
-| 🚨 High | Primary & secondary screenshots for Sevix Global (agency marketing + admin) | Home, Project Detail | `NEEDS_CONFIRMATION` |
+| 🚨 High | Screenshots for BuildHub (`storefront.png`, `product-catalog.png`) | Home, Project Detail | ✅ Completed |
+| 🚨 High | Screenshots for Starfair (`homepage.png`, `course-page.png`, `magazine.png`) | Home, Project Detail | ✅ Completed |
+| 🚨 High | Screenshots for Sevix Global (`homepage.png`, `services.png`, `ai-automation.png`) | Home, Project Detail | ✅ Completed |
 | 🚨 High | Public CV PDF (`Monifa-Sultana-CV-public.pdf` without referee contacts) | Header, About page | `NEEDS_CONFIRMATION` (D-06) |
 | 🟡 Medium | Approval of draft About summary (150–220 words) & portrait preference | About page | `NEEDS_CONFIRMATION` (Q-08) |
 | 🟡 Medium | Confirmation of seeking status (employment, freelance, teaching, or all) | Hero & Contact CTA copy | `NEEDS_CONFIRMATION` (Q-03) |
