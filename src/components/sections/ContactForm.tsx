@@ -146,7 +146,7 @@ Message:
 ${fields.message.trim()}
 
 ---
-Sent via portfolio contact form (monifasultana.com)`;
+Sent via portfolio contact form`;
 
         const mailtoUrl = `mailto:${recipientEmail}?subject=${subject}&body=${encodeURIComponent(bodyText)}`;
         

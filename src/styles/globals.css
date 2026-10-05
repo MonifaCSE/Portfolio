@@ -65,6 +65,21 @@
   }
 }
 
+@keyframes subtleFloat {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(1deg);
+  }
+}
+
+.animate-float {
+  animation-name: subtleFloat;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
 /* Reduced motion preference */
 @media (prefers-reduced-motion: reduce) {
   html {

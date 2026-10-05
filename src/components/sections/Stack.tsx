@@ -3,6 +3,7 @@ import { Skill } from "@/lib/schemas";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { Tag } from "@/components/ui/Tag";
 import { Reveal } from "@/components/ui/Reveal";
+import { TechEcosystemVisual } from "@/components/sections/TechEcosystemVisual";
 
 export interface StackProps {
   skills: Skill[];
@@ -21,7 +22,7 @@ export const Stack: React.FC<StackProps> = ({ skills }) => {
 
   return (
     <section id="stack" className="py-20 md:py-28 hairline-bottom bg-ink-900">
-      <div className="max-w-content mx-auto px-5 sm:px-8 space-y-16">
+      <div className="max-w-content mx-auto px-5 sm:px-8 space-y-12 md:space-y-16">
         <Reveal>
           <SectionHeader
             index="03"
@@ -29,6 +30,9 @@ export const Stack: React.FC<StackProps> = ({ skills }) => {
             title="Practical project tools and academic technical proficiency."
             accentWord="Practical"
           />
+
+          {/* Signature Animated Floating Technology Ecosystem Visual */}
+          <TechEcosystemVisual />
 
           {/* Tier 1: Practical Project Experience */}
           <div className="space-y-6 p-8 rounded-lg border border-ink-700 bg-ink-850">

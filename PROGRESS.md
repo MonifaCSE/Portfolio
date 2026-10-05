@@ -40,6 +40,7 @@ The site is built as a **fully static web application (`output: 'export'`) deplo
   - `npm run type-check`: Passed (0 errors).
   - `npm run check-content`: Passed (0 publication guard blocking errors).
   - `npm run build`: Passed (`✓ Generating static pages (11/11)` static export to `out/`).
+  - Added signature `TechEcosystemVisual` feature to `#stack` section: floating technology ecosystem with portrait framing, mouse parallax, AI automation workflow particle connections, and `prefers-reduced-motion` compliance.
   - WCAG 2.2 AA audit conducted and documented in `docs/a11y-report.md` (100% compliance across semantic landmarks, keyboard focus, contrast ratios, and reduced motion).
   - Responsive testing verified across 320px, 375px, 768px, 1024px, 1440px viewports with zero horizontal overflow.
   - Performance budgets verified (First Load JS 151 kB, 3D chunk dynamic import post-idle, CLS 0.0).
@@ -75,7 +76,7 @@ The site is built as a **fully static web application (`output: 'export'`) deplo
 | 🚨 High | Screenshots for Starfair (`homepage.png`, `course-page.png`, `magazine.png`) | Home, Project Detail | ✅ Completed |
 | 🚨 High | Screenshots for Sevix Global (`homepage.png`, `services.png`, `ai-automation.png`) | Home, Project Detail | ✅ Completed |
 | 🚨 High | Public CV PDF (`Monifa-Sultana-CV-public.pdf` without referee contacts) | Header, About page | `NEEDS_CONFIRMATION` (D-06) |
-| 🟡 Medium | Approval of draft About summary (150–220 words) & portrait preference | About page | `NEEDS_CONFIRMATION` (Q-08) |
+| 🟡 Medium | Professional portrait image (`monifa-sultana.jpg`, `monifa-sultana-about.jpg`) | Home Hero, About page | ✅ Completed |
 | 🟡 Medium | Confirmation of seeking status (employment, freelance, teaching, or all) | Hero & Contact CTA copy | `NEEDS_CONFIRMATION` (Q-03) |
 | 🔵 Low | Additional details for COVID-19, Techy Octopus OS, OTHM Checker projects | Secondary case studies | `NEEDS_CONFIRMATION` (Q-06, Q-07) |
 

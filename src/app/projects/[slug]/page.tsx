@@ -10,6 +10,7 @@ import { FeatureList } from "@/components/project/FeatureList";
 import { BrowserFrame } from "@/components/project/BrowserFrame";
 import { MDXRenderer } from "@/components/project/MDXRenderer";
 import { CreativeWorkJsonLd } from "@/components/seo/JsonLd";
+import { getSiteUrl } from "@/lib/site-url";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 
 export interface ProjectPageProps {
@@ -18,7 +19,7 @@ export interface ProjectPageProps {
   };
 }
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://monifasultana.com";
+const siteUrl = getSiteUrl();
 const siteData = getSiteData();
 
 // Statically generate every published project route at build time for SSG & GitHub Pages

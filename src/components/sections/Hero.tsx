@@ -21,9 +21,32 @@ export const Hero: React.FC<HeroProps> = ({ siteData }) => {
           
           {/* Left Column: Typography & CTAs (Cols 1-7) */}
           <div className="lg:col-span-7 space-y-6 z-10">
-            {/* Eyebrow */}
-            <div className="inline-block text-xs font-mono tracking-widest text-textMute uppercase font-medium">
-              {siteData.eyebrow}
+            {/* Editorial Personal Brand Portrait Banner */}
+            <div className="flex items-center gap-4 sm:gap-5 pb-1">
+              <div className="relative shrink-0 w-20 h-24 sm:w-24 sm:h-28 md:w-28 md:h-34 rounded-md border border-ink-700 bg-ink-850 p-1 shadow-md overflow-hidden group">
+                <img
+                  src="/images/monifa-sultana.jpg"
+                  alt="Monifa Sultana — Web Developer and CSE Lecturer"
+                  width={112}
+                  height={140}
+                  className="w-full h-full object-cover object-top rounded transition-transform duration-500 group-hover:scale-105"
+                  loading="eager"
+                  fetchPriority="high"
+                />
+                <div className="absolute inset-0 rounded pointer-events-none ring-1 ring-inset ring-ember-500/20" />
+              </div>
+
+              <div className="space-y-1">
+                <div className="inline-block text-xs font-mono tracking-widest text-textMute uppercase font-medium">
+                  {siteData.eyebrow}
+                </div>
+                <div className="text-base sm:text-lg font-serif text-bone font-medium">
+                  Monifa Sultana
+                </div>
+                <div className="text-xs font-mono text-ember-400">
+                  Web Developer & CSE Lecturer
+                </div>
+              </div>
             </div>
 
             {/* H1 Heading */}

@@ -4,6 +4,7 @@ export interface PersonJsonLdProps {
   name: string;
   jobTitle: string;
   url: string;
+  image?: string;
   alumniOf?: string;
 }
 
@@ -11,6 +12,7 @@ export const PersonJsonLd: React.FC<PersonJsonLdProps> = ({
   name,
   jobTitle,
   url,
+  image,
   alumniOf = "International Islamic University Chittagong (IIUC)",
 }) => {
   const schema = {
@@ -19,6 +21,7 @@ export const PersonJsonLd: React.FC<PersonJsonLdProps> = ({
     name,
     jobTitle,
     url,
+    image: image || undefined,
     alumniOf: {
       "@type": "EducationalOrganization",
       name: alumniOf,

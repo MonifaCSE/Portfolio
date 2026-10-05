@@ -39,6 +39,7 @@
 | **BuildHub Screenshots** | `/public/projects/buildhub/storefront.png`<br/>`/public/projects/buildhub/product-catalog.png` | ✅ Captured & Verified | Desktop 2000×1250px screenshots optimized & linked in MDX |
 | **Starfair Screenshots** | `/public/projects/starfair-training-institute/homepage.png`<br/>`/public/projects/starfair-training-institute/course-page.png`<br/>`/public/projects/starfair-training-institute/magazine.png` | ✅ Captured & Verified | Desktop 2000×1250px screenshots optimized & linked in MDX |
 | **Sevix Global Screenshots** | `/public/projects/sevix-global/homepage.png`<br/>`/public/projects/sevix-global/services.png`<br/>`/public/projects/sevix-global/ai-automation.png` | ✅ Captured & Verified | Desktop 2000×1250px screenshots optimized & linked in MDX |
+| **Professional Portrait** | `/public/images/monifa-sultana.jpg`<br/>`/public/images/monifa-sultana-about.jpg` | ✅ Captured & Verified | Editorial portrait & headshot added to Hero, About page & JSON-LD |
 | **Public CV PDF** | `/public/cv/Monifa-Sultana-CV-public.pdf` | ⏳ Waiting for User Assets | CV buttons point to placeholder path |
 | **Confirmed Public Email** | `content/site.ts` (`socials.email.address`) | ⏳ Waiting for User Input | Form mailto uses `contact@example.com` placeholder |
 | **Confirmed LinkedIn URL** | `content/site.ts` (`socials.linkedin.url`) | ⏳ Waiting for User Input | Social link points to placeholder `https://linkedin.com` |

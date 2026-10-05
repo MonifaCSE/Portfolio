@@ -99,14 +99,44 @@ export default function AboutPage() {
           <div className="lg:col-span-9 space-y-16">
             
             {/* 01. Summary */}
-            <section id="summary" className="space-y-4">
+            <section id="summary" className="space-y-6">
               <h2 className="text-2xl font-serif text-bone hairline-bottom pb-3">
                 Professional Summary
               </h2>
-              <div className="space-y-4 text-textSoft leading-relaxed font-sans text-base sm:text-lg">
-                {profile.bio.map((paragraph, i) => (
-                  <p key={i}>{paragraph}</p>
-                ))}
+
+              <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+                {/* Secondary Personal Brand Visual */}
+                <div className="md:col-span-4 space-y-3">
+                  <div className="relative rounded-lg border border-ink-700 bg-ink-850 p-1.5 shadow-xl overflow-hidden group">
+                    <img
+                      src="/images/monifa-sultana-about.jpg"
+                      alt="Monifa Sultana — Web Developer and CSE Lecturer"
+                      width={280}
+                      height={280}
+                      className="w-full aspect-square object-cover object-top rounded-md transition-transform duration-500 group-hover:scale-105"
+                      loading="lazy"
+                    />
+                    <div className="absolute inset-0 rounded-md pointer-events-none ring-1 ring-inset ring-ember-500/20" />
+                  </div>
+                  <div className="text-center md:text-left px-1">
+                    <div className="text-sm font-serif text-bone font-medium">
+                      Monifa Sultana
+                    </div>
+                    <div className="text-xs font-mono text-ember-400">
+                      Web Developer & CSE Lecturer
+                    </div>
+                    <div className="text-xs font-mono text-textMute pt-0.5">
+                      Chattogram, Bangladesh
+                    </div>
+                  </div>
+                </div>
+
+                {/* Bio Text */}
+                <div className="md:col-span-8 space-y-4 text-textSoft leading-relaxed font-sans text-base sm:text-lg">
+                  {profile.bio.map((paragraph, i) => (
+                    <p key={i}>{paragraph}</p>
+                  ))}
+                </div>
               </div>
             </section>
 

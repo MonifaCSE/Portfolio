@@ -4,9 +4,10 @@ import { SiteHeader } from "@/components/layout/SiteHeader";
 import { Footer } from "@/components/layout/Footer";
 import { PersonJsonLd, WebSiteJsonLd } from "@/components/seo/JsonLd";
 import { getSiteData } from "@/lib/content";
+import { getSiteUrl } from "@/lib/site-url";
 
 const siteData = getSiteData();
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://monifasultana.com";
+const siteUrl = getSiteUrl();
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -56,6 +57,7 @@ export default function RootLayout({
           name={siteData.name}
           jobTitle="Web Developer & Computer Science Lecturer"
           url={siteUrl}
+          image={`${siteUrl}/images/monifa-sultana.jpg`}
         />
         <WebSiteJsonLd
           name={siteData.name}
