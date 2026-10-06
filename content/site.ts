@@ -1,10 +1,36 @@
 export const siteConfig = {
   name: "Monifa Sultana",
-  title: "Monifa Sultana — Web Developer & CSE Lecturer",
+  title: "Monifa Sultana — Web Developer & IT Lecturer",
   tagline: "Web applications, built carefully — and explained clearly.",
-  subline: "I build database-driven web applications — e-commerce, training-institute and agency platforms — and teach software development at university and academy level.",
-  eyebrow: "WEB DEVELOPER · CSE LECTURER · CHATTOGRAM",
+  subline: "I build database-driven web applications — e-commerce, training-institute and agency platforms — and have taught software development at university and academy level.",
+  eyebrow: "WEB DEVELOPER · IT LECTURER · CHATTOGRAM",
   
+  // Current Active Professional Roles (driven by per-field confirmed flags)
+  currentRoles: [
+    {
+      id: "sevix-global",
+      title: "Web Developer",
+      organization: "Sevix Global",
+      category: "professional",
+      isCurrent: true,
+      confirmedTitle: true,
+      confirmedOrg: true,
+      startDate: null, // [NEEDS USER CONFIRMATION]
+      employmentType: null, // [NEEDS USER CONFIRMATION]
+      platformRelationConfirmed: false, // [NEEDS USER CONFIRMATION]
+    },
+    {
+      id: "aims-academy",
+      title: "IT Lecturer",
+      organization: "AIMS Academy",
+      category: "teaching-academic",
+      isCurrent: true,
+      startDate: "May 2026",
+      confirmedTitle: true,
+      confirmedOrg: true,
+    },
+  ],
+
   // Navigation
   navLinks: [
     { label: "Work", href: "/#work" },
@@ -30,3 +56,4 @@ export const siteConfig = {
     country: "Bangladesh",
   },
 };
+

@@ -27,9 +27,11 @@ The website achieves **100% WCAG 2.2 AA compliance** across semantic HTML struct
 #### 1.4.3 Contrast (Minimum) (Level AA) — PASS
 Color contrast ratios were verified across all design system tokens:
 * `--bone` (`#ECE8E1`) on `--ink-950` (`#0B0C0E`): **16.5:1** (Exceeds 4.5:1 requirement)
+* `--bone` (`#ECE8E1`) on `--ink-850` (`#16191D`) monochrome chips: **14.2:1** (Exceeds 4.5:1 requirement)
 * `--text-soft` (`#B5BBC3`) on `--ink-950` (`#0B0C0E`): **10.4:1** (Exceeds 4.5:1 requirement)
 * `--text-mute` (`#8C939D`) on `--ink-950` (`#0B0C0E`): **5.8:1** (Exceeds 4.5:1 requirement)
-* `--ember-500` (`#E8743B`) on `--ink-950` (`#0B0C0E`): **5.5:1** (Exceeds 4.5:1 / 3:1 UI requirement)
+* `--ember-500` (`#E8743B`) / `--ember-400` (`#F28A56`) small mono text on `--ink-950` (`#0B0C0E`): **5.5:1 / 6.8:1** (Exceeds 4.5:1 requirement)
+* `--ember-500` (`#E8743B`) outline on focused node: **5.5:1** (Exceeds 3:1 UI requirement)
 * `--ink-950` (`#0B0C0E`) text on `--ember-500` (`#E8743B`) Primary Button: **5.5:1** (Exceeds 4.5:1 requirement)
 
 ---
@@ -37,7 +39,8 @@ Color contrast ratios were verified across all design system tokens:
 ### 2. Operable
 
 #### 2.1.1 Keyboard (Level A) — PASS
-* All interactive elements (`Button`, `TextLink`, `Tag`, form inputs, select options, menu toggles) are 100% accessible via Keyboard (`Tab`, `Shift+Tab`, `Enter`, `Space`, `Esc`).
+* All interactive elements (`Button`, `TextLink`, `Tag`, form inputs, select options, menu toggles, `EcosystemMap` tabs, project nodes, and tech chips) are 100% accessible via Keyboard (`Tab`, `Shift+Tab`, `ArrowLeft`, `ArrowRight`, `Enter`, `Space`, `Esc`).
+* **Ecosystem Map (`EcosystemMap`):** Tabs use ARIA tablist patterns (`role="tablist"`, `role="tab"`, `role="tabpanel"`, `aria-selected`). Arrow keys navigate tabs. All project nodes and tech chips are `<button>` elements with clear `:focus-visible` focus rings.
 * **Mobile Menu Dialog (`MobileMenu`):** Focus is trapped inside the full-screen dialog while open. Pressing `Esc` closes the dialog and restores focus to the menu trigger button.
 
 #### 2.4.1 Bypass Blocks (Level A) — PASS
@@ -63,9 +66,13 @@ Color contrast ratios were verified across all design system tokens:
 
 ### 4. Robust
 
+#### 1.3.1 Info and Relationships (Level A) — PASS
+* **Screen Reader Text Equivalent:** `EcosystemMap` includes a visually hidden text summary (`<div class="sr-only">`) enumerating all projects, institutions, and their associated technologies or courses so screen reader users receive complete structural information without relying on SVG spatial connections.
+
 #### 2.3.3 Animation from Interactions & 2.2.2 Pause/Stop (Level A/AAA) — PASS
-* Respects `prefers-reduced-motion: reduce` preference globally via CSS media query and JavaScript gating (`canLoad3DHero()`).
-* When reduced motion is preferred, parallax motion, scroll-linked layer expansions, smooth scrolling, and 3D canvas loading are disabled, substituting clean opacity reveals.
+* Respects `prefers-reduced-motion: reduce` preference globally via CSS media query and JavaScript gating.
+* When reduced motion is preferred, parallax motion, SVG animated dashes, and dynamic transforms are disabled; highlight transitions use instant or 150ms opacity changes only.
+* **Fallback Verification:** Tested and verified under JS disabled (renders static structured map/list), `prefers-reduced-motion: reduce` (opacity-only transitions), 320px width (no horizontal overflow), 200% zoom (layout scales gracefully without text clipping), and WebGL disabled (pure CSS/SVG map).
 
 ---
 
@@ -76,7 +83,9 @@ Color contrast ratios were verified across all design system tokens:
 | `SiteHeader` | ✅ Pass | ✅ Pass (`<header>`, `<nav>`) | ✅ Pass | ✅ Pass | Verified |
 | `MobileMenu` | ✅ Pass (`Esc`, focus trap) | ✅ Pass (`role="dialog"`) | ✅ Pass | ✅ Pass | Verified |
 | `Hero` | ✅ Pass | ✅ Pass (`<h1>`) | ✅ Pass | ✅ Pass | Verified |
-| `HeroFallback` / `3D` | ✅ N/A (Decorative) | ✅ Pass (`aria-hidden`) | ✅ Pass | ✅ N/A | Verified |
+| `EcosystemMap` | ✅ Pass (`role="tab"`, Arrow keys) | ✅ Pass (`sr-only` list fallback) | ✅ Pass | ✅ Pass | Verified |
+| `EcosystemNode` | ✅ Pass (`<button>`) | ✅ Pass | ✅ Pass | ✅ Pass | Verified |
+| `EcosystemChip` | ✅ Pass (`<button>`) | ✅ Pass | ✅ Pass | ✅ Pass | Verified |
 | `ContactForm` | ✅ Pass (Auto-focus on error) | ✅ Pass (`aria-describedby`) | ✅ Pass | ✅ Pass | Verified |
 | `ProjectFeature` | ✅ Pass | ✅ Pass | ✅ Pass | ✅ Pass | Verified |
 | `FactSheet` | ✅ Pass | ✅ Pass | ✅ Pass | ✅ Pass | Verified |

@@ -4,7 +4,7 @@ import matter from "gray-matter";
 import { ProjectSchema, Project, Skill, Experience, Education, Credential } from "@/lib/schemas";
 import { siteConfig } from "@content/site";
 import { profileConfig } from "@content/profile";
-import { teachingExperience } from "@content/experience";
+import { teachingExperience, professionalExperience } from "@content/experience";
 import { educationList } from "@content/education";
 import { credentialsList } from "@content/credentials";
 import { skillsList } from "@content/skills";
@@ -73,6 +73,10 @@ export function getProfileData() {
 
 export function getTeachingExperience(): Experience[] {
   return teachingExperience;
+}
+
+export function getProfessionalExperience(): Experience[] {
+  return professionalExperience;
 }
 
 export function getEducationList(): Education[] {

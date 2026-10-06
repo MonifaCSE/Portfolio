@@ -322,7 +322,7 @@ Fallback: if `/api/contact` unavailable/unconfigured, form is replaced by the co
 ## 27. Footer (`Footer`)
 
 `--ink-900`, top hairline. Three columns desktop / stacked mobile:
-1. Wordmark + one-line descriptor ("Web developer and CSE lecturer in Chattogram" `[NEEDS USER CONFIRMATION: Q-04]`).
+1. Wordmark + one-line descriptor ("Web developer and IT lecturer in Chattogram" `[NEEDS USER CONFIRMATION: Q-04]`).
 2. Navigation: Work · About · Privacy · CV.
 3. Contact/social: only confirmed public items `[NEEDS USER CONFIRMATION: Q-13]` (LinkedIn, GitHub, email).
 Bottom row: `© 2026 Monifa Sultana` left; "Back to top" `TextLink` right. No "Made with ♥", no ratings.
@@ -344,7 +344,10 @@ Bottom row: `© 2026 Monifa Sultana` left; "Back to top" `TextLink` right. No "M
 | `SiteHeader` | `links[]`, `cvHref` | §10 |
 | `MobileMenu` | `links[]`, `socials[]` | §10 |
 | `Hero` | `eyebrow`, `headline` (with accent token), `subline`, `primaryCta`, `secondaryCta` | §31.1 |
-| `HeroScene` / `HeroFallback` | none | §16, loaded via `HeroSceneLoader` (client, dynamic, `ssr:false`) |
+| `EcosystemMap` | `projects[]`, `experience[]` | Evidence-based "Build ↔ Teach" map with dynamic SVG connections and mobile fallback list (§31.1) |
+| `EcosystemNode` | `id`, `name`, `type`, `active?`, `dimmed?` | Node element (project/institution card or center portrait) |
+| `EcosystemChip` | `id`, `name`, `active?`, `dimmed?` | Monochrome tech chip (bone text on `--ink-850`, 1px `--ink-600` border, radius 4) |
+| `HeroScene` [O] / `HeroFallback` | none | §16, optional experiment |
 | `SectionHeader` | `index`, `label`, `title`, `accentWord?` | Mono `0N — Label` + H2 |
 | `ProjectFeature` | `project`, `index` | §13.1 |
 | `BrowserFrame` | `src`, `alt`, `urlLabel?`, `pins?` | §13.2 |
@@ -380,11 +383,24 @@ Naming: PascalCase components under `components/{ui,layout,sections,project,auto
 
 ### 31.1 Home
 
-**Hero** (min-height `max(640px, 100svh)`, bottom padding 64):
-- Layout desktop: grid 12. Text cols 1–7, vertically centred, offset to top ≈ 22vh. Scene occupies cols 7–12 absolute, right-bleed, behind nothing and masked at the left edge.
-- Content stack (gap 24): eyebrow (`label`, `--text-mute`) → H1 `display-xl`: "Web applications, **built carefully** — and explained clearly." (accent on "built carefully" italic ember) → subline (`body-l`, `--text-soft`, max 52ch) → CTA row (gap 16).
-- Bottom strip (hairline above, 24 px padding): left "Currently — IT Lecturer at AIMS Academy" (verified F-04; mono) · centre "MSc CSE, IIUC (pursuing)" · right "Scroll" glyph (↓, hides on scroll). On mobile: one line only ("Currently — IT Lecturer, AIMS Academy").
-- No stats, no icon row, no portrait.
+**Hero** (min-height `max(640px, 100svh)`, bottom padding 32):
+- Layout desktop: 2-column composition (grid 12). Left (cols 1–6): text stack vertically centred. Right (cols 7–12): `EcosystemMap` ("Projects & stack"). No full-height side borders running under header.
+- Content stack (gap 24):
+  - Eyebrow (single line only): `WEB DEVELOPER · IT LECTURER · CHATTOGRAM` (`label`, `--text-mute`). Duplicate sub-eyebrow removed.
+  - H1 `display-xl`: "Web applications, **built carefully** — and explained clearly." (accent on "built carefully" italic ember).
+  - Subline (`body-l`, `--text-soft`, max 50ch): "...and have taught software development at university and academy level."
+  - CTA row (gap 16): "View projects" primary `Button` + "Download CV" secondary `Button`.
+- Bottom strip (hairline above, 16 px padding): left "Web Developer — Sevix Global" · centre "IT Lecturer — AIMS Academy" · right "MSc CSE, IIUC (pursuing)" / "Scroll ↓". List Web Developer first (primary positioning).
+- Right panel — `EcosystemMap` ("Projects & stack"):
+  - Panel header: title "Projects & stack" + caption "Technologies are shown where I have used them in a project."
+  - Keyboard-operable tabs (`role="tablist"`): "Build" and "Teach".
+  - **Build view**: Centre portrait card (owner photo), surrounded by published project nodes (BuildHub, Starfair, Sevix Global). Monochrome tech chips connected to project nodes by 1px SVG hairlines derived dynamically from published project stack. Shared tech sits between projects with lines to each. No Python, Flask, Django, React, or Node in this view.
+  - **Teach view**: Institution nodes (AIMS Academy, GMIT Academy, IIUC) + CV-verified course chips.
+  - **Interaction**: Hover/focus/click on a project node highlights its connected chips and lines and dims the rest (opacity 1 vs 0.25, 150ms transition). Hover/focus on a chip highlights the projects using it. Default state: all lines at ~30% opacity, no auto-cycling. Project node click links to Project Detail page.
+  - **Visual rules**: Monochrome chips (bone text on `--ink-850`, 1px `--ink-600` border, radius 4px); ember accent ONLY on the active line, active tab button, and highlighted node outline. No brand colours, no glow, no neon. Chip text ≥ 13px, mono labels ≥ 12px.
+  - **Layout & Sizing**: Entire panel fits in first viewport at 1366×768, 1440×900, and 1920×1080 (height ≤ 100svh - header height; scale via aspect-ratio, never clip chips).
+  - **Mobile (<768px)**: Floating map replaced by responsive stacked list (Build tab: project name, status badge, tech chip list; Teach tab: institution roles and courses). Tap targets ≥ 44px.
+  - **Accessibility & Fallback**: `sr-only` text list provided for screen readers. Static readable map/list when JS disabled or reduced-motion enabled (CLS ≤ 0.1). R3F 3D hero scene demoted to optional experiment `[O]`.
 
 **01 Intro** (`--ink-950`): H2 (serif, ≤ 3 lines): "I build the whole application — and I teach the people who will build the next one." *(draft; remove "whole application" if Q-02 says otherwise)*. Right column three short blocks with mono labels: **Build** (databases, admin back-offices, public sites), **Teach** (university and academy courses since 2022), **Explore** (AI & automation, as a direction). Each ≤ 25 words, no icons.
 

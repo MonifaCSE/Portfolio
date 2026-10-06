@@ -25,7 +25,7 @@ export const Footer: React.FC<FooterProps> = ({ siteData }) => {
               {siteData.name}
             </Link>
             <p className="text-sm text-textMute max-w-sm font-sans">
-              Web Developer & CSE Lecturer based in {siteData.location.city}, {siteData.location.country}. Building database-driven web applications and teaching software engineering.
+              Web Developer & IT Lecturer based in {siteData.location.city}, {siteData.location.country}. Building database-driven web applications and teaching software engineering.
             </p>
           </div>
 

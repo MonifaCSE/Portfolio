@@ -40,10 +40,12 @@ The site is built as a **fully static web application (`output: 'export'`) deplo
   - `npm run type-check`: Passed (0 errors).
   - `npm run check-content`: Passed (0 publication guard blocking errors).
   - `npm run build`: Passed (`✓ Generating static pages (11/11)` static export to `out/`).
-  - Added signature `TechEcosystemVisual` feature to `#stack` section: floating technology ecosystem with portrait framing, mouse parallax, AI automation workflow particle connections, and `prefers-reduced-motion` compliance.
+  - Added signature `TechEcosystemVisual` feature and recomposed Hero: Moved interactive technology ecosystem with central portrait framing, interactive category switch tabs (Web Dev Primary vs AI & Automation Secondary), orbital/workflow connection lines, mouse parallax, and keyboard accessibility directly into the Hero section right column.
+  - Removed duplicate visual from Section 03 (`Stack.tsx`) to maintain visual diversity.
+  - Removed old 3D Hero scene from initial waterfall while preserving Three.js files.
   - WCAG 2.2 AA audit conducted and documented in `docs/a11y-report.md` (100% compliance across semantic landmarks, keyboard focus, contrast ratios, and reduced motion).
   - Responsive testing verified across 320px, 375px, 768px, 1024px, 1440px viewports with zero horizontal overflow.
-  - Performance budgets verified (First Load JS 151 kB, 3D chunk dynamic import post-idle, CLS 0.0).
+  - Performance budgets verified (First Load JS 151 kB, CLS 0.0).
   - Acceptance criteria AC-01 through AC-23 verified.
   - Static export output files in `out/` verified (`index.html`, `about.html`, `privacy.html`, `404.html`, `sitemap.xml`, `robots.txt`, `og-image.svg`, `projects/*.html`).
   - Final QA report created at `docs/qa-report.md`.

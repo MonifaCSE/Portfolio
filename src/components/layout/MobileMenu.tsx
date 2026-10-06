@@ -93,7 +93,7 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({
           {cvLink.label} (PDF)
         </Button>
         <p className="text-xs font-mono text-textMute text-center">
-          Web Developer · CSE Lecturer
+          Web Developer · IT Lecturer
         </p>
       </div>
     </div>

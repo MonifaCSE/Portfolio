@@ -3,12 +3,14 @@
 import * as React from "react";
 import Image from "next/image";
 import { ScreenshotPlaceholder } from "@/components/project/ScreenshotPlaceholder";
+import { ExternalLink } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 export interface BrowserFrameProps {
   src?: string;
   alt: string;
   urlLabel?: string;
+  liveUrl?: string;
   width?: number;
   height?: number;
   className?: string;
@@ -18,13 +20,18 @@ export interface BrowserFrameProps {
 export const BrowserFrame: React.FC<BrowserFrameProps> = ({
   src,
   alt,
-  urlLabel = "project preview",
+  urlLabel,
+  liveUrl,
   width = 1600,
   height = 1000,
   className,
   aspectRatio = "aspect-[16/10]",
 }) => {
   const [hasError, setHasError] = React.useState(false);
+
+  // Clean formatted display URL (e.g., buildhub-ecommerce.com)
+  const displayUrl = urlLabel || (liveUrl ? liveUrl.replace(/^https?:\/\//, "") : "project preview");
+  const targetUrl = liveUrl || (urlLabel && urlLabel.startsWith("http") ? urlLabel : undefined);
 
   return (
     <div
@@ -43,9 +50,23 @@ export const BrowserFrame: React.FC<BrowserFrameProps> = ({
         </div>
 
         {/* URL Pill */}
-        <div className="px-3 py-0.5 rounded bg-ink-950/60 text-[11px] font-mono text-textMute tracking-wide truncate max-w-[200px] sm:max-w-[280px]">
-          {urlLabel}
-        </div>
+        {targetUrl ? (
+          <a
+            href={targetUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-1.5 px-3 py-0.5 rounded bg-ink-950/80 hover:bg-ink-900 border border-ink-700/60 hover:border-ember-500/50 text-[11px] font-mono text-ember-400 hover:text-bone tracking-wide truncate max-w-[220px] sm:max-w-[320px] transition-all"
+            title={`Visit live site: ${targetUrl}`}
+          >
+            <span className="w-1.5 h-1.5 rounded-full bg-ember-500 animate-pulse shrink-0" />
+            <span className="truncate">{displayUrl}</span>
+            <ExternalLink className="w-2.5 h-2.5 shrink-0 opacity-70" />
+          </a>
+        ) : (
+          <div className="px-3 py-0.5 rounded bg-ink-950/60 text-[11px] font-mono text-textMute tracking-wide truncate max-w-[200px] sm:max-w-[280px]">
+            {displayUrl}
+          </div>
+        )}
 
         {/* Space Balance */}
         <div className="w-8" />
@@ -63,9 +84,10 @@ export const BrowserFrame: React.FC<BrowserFrameProps> = ({
             className="w-full h-full object-cover object-top transition-transform duration-300 hover:scale-[1.01]"
           />
         ) : (
-          <ScreenshotPlaceholder label={alt || urlLabel} />
+          <ScreenshotPlaceholder label={alt || displayUrl} />
         )}
       </div>
     </div>
   );
 };
+

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import {
   getProfileData,
   getTeachingExperience,
+  getProfessionalExperience,
   getEducationList,
   getCredentialsList,
   getSkillsList,
@@ -10,17 +11,17 @@ import {
 import { Timeline } from "@/components/ui/Timeline";
 import { Tag } from "@/components/ui/Tag";
 import { Button } from "@/components/ui/Button";
-import { Reveal } from "@/components/ui/Reveal";
 
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Web Developer and CSE Lecturer based in Chattogram. Read about Monifa Sultana's teaching history, education, research, and technical stack.",
+    "Web Developer and IT Lecturer based in Chattogram. Read about Monifa Sultana's professional roles, teaching history, education, research, and technical stack.",
 };
 
 export default function AboutPage() {
   const profile = getProfileData();
   const teachingExp = getTeachingExperience();
+  const professionalExp = getProfessionalExperience();
   const education = getEducationList();
   const credentials = getCredentialsList();
   const skills = getSkillsList();
@@ -64,7 +65,7 @@ export default function AboutPage() {
               </li>
               <li>
                 <a href="#timeline" className="hover:text-ember-400 transition-colors">
-                  02. Teaching Timeline
+                  02. Experience
                 </a>
               </li>
               <li>
@@ -110,7 +111,7 @@ export default function AboutPage() {
                   <div className="relative rounded-lg border border-ink-700 bg-ink-850 p-1.5 shadow-xl overflow-hidden group">
                     <img
                       src="/images/monifa-sultana-about.jpg"
-                      alt="Monifa Sultana — Web Developer and CSE Lecturer"
+                      alt="Monifa Sultana — Web Developer and IT Lecturer"
                       width={280}
                       height={280}
                       className="w-full aspect-square object-cover object-top rounded-md transition-transform duration-500 group-hover:scale-105"
@@ -123,7 +124,7 @@ export default function AboutPage() {
                       Monifa Sultana
                     </div>
                     <div className="text-xs font-mono text-ember-400">
-                      Web Developer & CSE Lecturer
+                      Web Developer & IT Lecturer
                     </div>
                     <div className="text-xs font-mono text-textMute pt-0.5">
                       Chattogram, Bangladesh
@@ -140,18 +141,32 @@ export default function AboutPage() {
               </div>
             </section>
 
-            {/* 02. Teaching & Academic Timeline */}
-            <section id="timeline" className="space-y-6">
-              <div className="flex flex-wrap items-center justify-between gap-4 hairline-bottom pb-3">
-                <h2 className="text-2xl font-serif text-bone">
-                  Teaching & Academic Experience
-                </h2>
-                <Tag variant="accent">Teaching & Academic Roles Only</Tag>
+            {/* 02. Professional & Academic Timeline */}
+            <section id="timeline" className="space-y-8">
+              {/* Professional Roles Group */}
+              <div className="space-y-4">
+                <div className="flex flex-wrap items-center justify-between gap-4 hairline-bottom pb-3">
+                  <h2 className="text-2xl font-serif text-bone">
+                    Professional Role
+                  </h2>
+                  <Tag variant="accent">Current Professional Position</Tag>
+                </div>
+                <Timeline entries={professionalExp} />
               </div>
-              <p className="text-sm text-textMute font-sans">
-                Academic appointments, lab instructions, and course lecturing since 2022. Software engineering projects are kept in the Selected Work section.
-              </p>
-              <Timeline entries={teachingExp} />
+
+              {/* Teaching & Academic Roles Group */}
+              <div className="space-y-4 pt-4">
+                <div className="flex flex-wrap items-center justify-between gap-4 hairline-bottom pb-3">
+                  <h3 className="text-xl font-serif text-bone">
+                    Teaching & Academic Roles
+                  </h3>
+                  <Tag variant="muted">Teaching & Lab Instruction</Tag>
+                </div>
+                <p className="text-sm text-textMute font-sans">
+                  Academic appointments, lab instructions, and course lecturing since 2022. Software engineering projects are documented separately in the Selected Work section.
+                </p>
+                <Timeline entries={teachingExp} />
+              </div>
             </section>
 
             {/* 03. Education */}

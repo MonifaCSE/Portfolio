@@ -27,7 +27,7 @@ export default function HomePage() {
 
   return (
     <div className="w-full">
-      <Hero siteData={siteData} />
+      <Hero siteData={siteData} projects={featuredProjects} experience={teachingExp} />
       <Intro />
       <SelectedWork projects={featuredProjects} />
       <Stack skills={skills} />

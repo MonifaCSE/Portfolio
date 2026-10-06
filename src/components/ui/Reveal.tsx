@@ -18,17 +18,21 @@ export const Reveal: React.FC<RevealProps> = ({ children, delay = 0, className }
     setIsMounted(true);
   }, []);
 
-  const prefersReduced = isMounted && !!shouldReduceMotion;
+  // Before client mount or if prefers-reduced-motion is active, render a standard div
+  // so content is immediately 100% visible in the HTML without any initial opacity: 0 blank spaces
+  if (!isMounted || shouldReduceMotion) {
+    return <div className={className}>{children}</div>;
+  }
 
   return (
     <motion.div
-      initial={prefersReduced ? false : { opacity: 0, y: 16 }}
-      whileInView={prefersReduced ? undefined : { opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-10%" }}
+      initial={{ opacity: 0, y: 12 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.01 }}
       transition={{
-        duration: 0.6,
+        duration: 0.4,
         delay,
-        ease: [0.22, 1, 0.36, 1], // --ease-out
+        ease: [0.22, 1, 0.36, 1],
       }}
       className={className}
     >
@@ -36,3 +40,4 @@ export const Reveal: React.FC<RevealProps> = ({ children, delay = 0, className }
     </motion.div>
   );
 };
+

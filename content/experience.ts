@@ -1,4 +1,21 @@
-import { Experience } from "@/lib/schemas";
+import type { Experience } from "@/lib/schemas";
+
+export const professionalExperience: Experience[] = [
+  {
+    id: "sevix-global-role",
+    title: "Web Developer",
+    organization: "Sevix Global",
+    location: "Chattogram",
+    startDate: "Current", // [NEEDS USER CONFIRMATION Q-14: exact start date unconfirmed]
+    endDate: "Present",
+    isCurrent: true,
+    category: "professional",
+    description: [
+      "Web Developer role at Sevix Global agency platform.",
+    ],
+    confirmed: true,
+  },
+];
 
 export const teachingExperience: Experience[] = [
   {
@@ -11,10 +28,15 @@ export const teachingExperience: Experience[] = [
     isCurrent: true,
     category: "teaching-academic",
     description: [
-      "Lecturing OTHM Level 3 IT and Level 5 Extended IT diploma modules.",
+      "Lecturing OTHM Level 3, Level 4, Level 5, and Level 6 IT diploma modules.",
       "Delivering core computing coursework, practical lab demonstrations, and student project supervision.",
     ],
-    courses: ["OTHM Level 3 IT", "OTHM Level 5 Extended Diploma in IT"],
+    courses: [
+      "OTHM Level 3 Diploma in IT",
+      "OTHM Level 4 Diploma in IT",
+      "OTHM Level 5 Extended Diploma in IT",
+      "OTHM Level 6 Diploma in IT",
+    ],
   },
   {
     id: "gmit-academy",
@@ -62,3 +84,4 @@ export const teachingExperience: Experience[] = [
     courses: ["Structured Programming (C++)", "Web Programming Labs (Flask/JS)"],
   },
 ];
+

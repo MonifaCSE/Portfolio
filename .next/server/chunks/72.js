@@ -1,0 +1,1 @@
+"use strict";exports.id=72,exports.ids=[72],exports.modules={3072:(s,e,t)=>{t.r(e),t.d(e,{TechEcosystemVisual:()=>o});let o=(0,t(8570).createProxy)(String.raw`D:\Self\Portfolio\src\components\sections\TechEcosystemVisual.tsx#TechEcosystemVisual`)}};

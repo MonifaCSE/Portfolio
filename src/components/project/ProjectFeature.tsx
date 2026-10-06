@@ -39,7 +39,8 @@ export const ProjectFeature: React.FC<ProjectFeatureProps> = ({ project, index, 
           <BrowserFrame
             src={primaryScreenshot?.src}
             alt={primaryScreenshot?.alt || project.title}
-            urlLabel={project.links?.live || `${project.slug}.demo`}
+            liveUrl={project.links?.live}
+            urlLabel={project.links?.live ? project.links.live.replace(/^https?:\/\//, "") : undefined}
           />
         </div>
 

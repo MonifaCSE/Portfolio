@@ -20,7 +20,7 @@
 **Canonical names** (use exactly these in code, copy, and docs):
 Pages — `Home`, `About`, `Project Detail`, `Privacy`, `Not Found`. Deferred pages — `Work Index`, `Automation`.
 Home sections — `Hero`, `Intro`, `Selected Work`, `Stack`, `Teaching & Academic`, `Direction` (AI & Automation), `Contact`.
-Components — `SiteHeader`, `MobileMenu`, `Hero`, `HeroScene`, `HeroFallback`, `SectionHeader`, `ProjectFeature`, `BrowserFrame`, `Annotation`, `FactSheet`, `StatusBadge`, `FeatureList`, `StackGroup`, `EvidenceChip`, `Timeline`, `CredentialList`, `DirectionPanel`, `AutomationFlow`, `ContactForm`, `FormStatus`, `Footer`, `Button`, `TextLink`, `Tag`, `Reveal`.
+Components — `SiteHeader`, `MobileMenu`, `Hero`, `EcosystemMap`, `EcosystemNode`, `EcosystemChip`, `HeroScene` [O], `HeroFallback`, `SectionHeader`, `ProjectFeature`, `BrowserFrame`, `Annotation`, `FactSheet`, `StatusBadge`, `FeatureList`, `StackGroup`, `EvidenceChip`, `Timeline`, `CredentialList`, `DirectionPanel`, `AutomationFlow`, `ContactForm`, `FormStatus`, `Footer`, `Button`, `TextLink`, `Tag`, `Reveal`.
 
 ---
 
@@ -83,7 +83,7 @@ Primary: 1 and 2. Secondary: 3 and 4. The site must not try to answer every audi
 - Subline: *I build database-driven web applications — e-commerce, training-institute and agency platforms — and teach software development at university and academy level.*
 - Alternates (owner to pick): "I build web applications, and I teach how they work." / "Developer by practice. Teacher by habit."
 
-**Eyebrow:** `WEB DEVELOPER · CSE LECTURER · CHATTOGRAM [NEEDS USER CONFIRMATION: Q-04 location spelling]`
+**Eyebrow:** `WEB DEVELOPER · IT LECTURER · CHATTOGRAM [NEEDS USER CONFIRMATION: Q-04 location spelling]`
 
 ## 7. Value proposition
 
@@ -392,12 +392,12 @@ Only `POST /api/contact` (route handler). No database, no auth, no admin, no CMS
 
 ## 19. SEO requirements
 
-- SEO-01 [E] Title template `%s — Monifa Sultana`; Home title: `Monifa Sultana — Web Developer & CSE Lecturer` `[NEEDS USER CONFIRMATION: Q-04]`.
+- SEO-01 [E] Title template `%s — Monifa Sultana`; Home title: `Monifa Sultana — Web Developer & IT Lecturer` `[NEEDS USER CONFIRMATION: Q-04]`.
 - SEO-02 [E] Unique meta description (≤ 155 chars) per page, derived from content.
 - SEO-03 [E] Canonical URL from `NEXT_PUBLIC_SITE_URL` (do not hardcode).
 - SEO-04 [E] Open Graph + Twitter card metadata; OG image generated with `next/og` (name, role line, brand motif; no photo required); per-project OG image with title.
 - SEO-05 [E] `sitemap.ts` lists Home, About, published projects, Privacy; `robots.ts` allows all in production, **disallows all on preview/staging and until domain is confirmed**.
-- SEO-06 [E] JSON-LD: `WebSite`, `Person` (name, jobTitle, `sameAs` = confirmed profiles only, `alumniOf` = IIUC; **no email/phone**), per project `CreativeWork` (name, description, dateCreated year, `creator`). No fabricated ratings/reviews.
+- SEO-06 [E] JSON-LD: `WebSite`, `Person` (name, jobTitle = "Web Developer & IT Lecturer", `worksFor` = confirmed current roles only, `sameAs` = confirmed profiles only, `alumniOf` = IIUC; **no email/phone**), per project `CreativeWork` (name, description, dateCreated year, `creator`). No fabricated ratings/reviews.
 - SEO-07 [E] One H1/page; logical heading order; descriptive link text; image alt text.
 - SEO-08 [E] CV download link with descriptive anchor text; filename `Monifa-Sultana-CV.pdf`.
 - SEO-09 [E] Contact info on site: only fields confirmed public (Q-13). Social links: only confirmed.
@@ -499,6 +499,9 @@ Detailed layouts are in DESIGN §21–22 and §31. Global rules: no horizontal o
 | AC-21 | No contact detail, social link or domain appears in production unless its `confirmed` flag is true; placeholders never render | Content guard test |
 | AC-22 | Sevix Global page contains no first-person claim about AI/chatbot/voice-agent implementation; deployment/ownership fields are absent unless confirmed | Content review |
 | AC-23 | No CV file containing referee details exists in `/public` or build output | Build-output scan |
+| AC-24 | Role wording site-wide uses "IT Lecturer at AIMS Academy" and "Web Developer at Sevix Global"; no instance of "CSE Lecturer" exists in codebase or metadata | Grep check |
+| AC-25 | Ecosystem panel ("Projects & stack") data is generated dynamically from published content files (projects MDX + experience TS); Build view displays published projects with monochrome tech chips connected by SVG hairlines; Teach view displays institutions and courses | Unit test + visual audit |
+| AC-26 | No unverified technology (e.g. Python, Flask, Django, React, Node) appears in Build view of the ecosystem map; only confirmed project technologies render | Data verification |
 
 ## 27. Implementation priorities
 
@@ -551,6 +554,7 @@ Detailed layouts are in DESIGN §21–22 and §31. Global rules: no horizontal o
 | Q-15 | Show Codeforces rating (811 max) and HackerRank? Show Graphic Designer/ICISET volunteer? | About |
 | Q-16 | Bangla version wanted now or later? | Scope |
 | Q-17 | Certification years/issuers' exact titles | Credentials |
+| Q-18 | Sevix Global professional role details: exact title ("Web Developer"), start date, employment type (full-time/part-time/contract), and relation to the Sevix project (e.g. built within this role)? | About/Roles |
 
 ## 30. Verified facts versus assumptions
 
@@ -604,5 +608,7 @@ Live URLs · GitHub repo URLs · screenshots · deployment status · clients/use
 | D-07 | Keep annotated-build concept, dark editorial style, ember accent, selective 3D hero; contrast must be verified during implementation; static fallback must be verified | Rev. 2 |
 | D-08 | Documentation and the initial implementation plan are not blocked by missing information; open questions are tracked (§29) and the per-project checklist in `PROJECT_CONTENT_CHECKLIST.md` | Rev. 2 |
 | D-09 | Project states (completed / ongoing / conceptual) must be distinguished for all six projects; none may be published with an unknown state | Rev. 2 |
+| D-10 | Current roles: Web Developer at Sevix Global (agency) + IT Lecturer at AIMS Academy (since May 2026). Retired "CSE Lecturer" title site-wide. Sevix start date, employment type, and relation to Sevix project remain `[NEEDS USER CONFIRMATION]` (Q-18). | Rev. 3 |
+| D-11 | Hero visual = evidence-based "Build ↔ Teach" ecosystem map (`EcosystemMap`, `EcosystemNode`, `EcosystemChip`), replacing exploded-stack 3D hero; R3F scene demoted to [O]. Build view tech chips connected to published projects via 1px SVG lines; Teach view shows institution nodes and courses. | Rev. 3 |
 
 **Placeholder rendering rule (D-05):** contact/social/domain fields in `content/site.ts` use `{ value: null, confirmed: false }`. In development they render a visible `[placeholder]` marker; in production they are omitted, and the build fails if a page that requires them (e.g., Contact fallback `mailto:`) has none.

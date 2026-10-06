@@ -105,9 +105,10 @@ export const ExperienceSchema = z.object({
   startDate: z.string(),
   endDate: z.string(),
   isCurrent: z.boolean().default(false),
-  category: z.literal("teaching-academic"),
+  category: z.enum(["teaching-academic", "professional"]),
   description: z.array(z.string()),
   courses: z.array(z.string()).optional(),
+  confirmed: z.boolean().optional(),
 });
 
 export type Experience = z.infer<typeof ExperienceSchema>;
