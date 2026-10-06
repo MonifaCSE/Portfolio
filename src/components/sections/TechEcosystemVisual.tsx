@@ -500,12 +500,12 @@ export const TechEcosystemVisual: React.FC<TechEcosystemVisualProps> = () => {
         id="panel-ecosystem"
         role="tabpanel"
         aria-labelledby={`tab-${activeTab}`}
-        className="relative min-h-[420px] sm:min-h-[480px] md:min-h-[520px] flex items-center justify-center overflow-hidden"
+        className="relative min-h-[500px] sm:min-h-[540px] md:min-h-[580px] flex items-center justify-center overflow-hidden"
       >
         {/* SVG Decorative Orbit & Glow Lines */}
         <svg
           className="absolute inset-0 w-full h-full pointer-events-none z-10 overflow-visible"
-          viewBox="0 0 600 520"
+          viewBox="0 0 600 580"
           preserveAspectRatio="none"
         >
           <defs>
@@ -522,19 +522,19 @@ export const TechEcosystemVisual: React.FC<TechEcosystemVisualProps> = () => {
 
           <ellipse
             cx="300"
-            cy="260"
-            rx="230"
-            ry="175"
+            cy="290"
+            rx="270"
+            ry="210"
             fill="none"
             stroke="url(#orbit-grad)"
             strokeWidth="1.5"
             strokeDasharray="6 6"
-            className="opacity-60"
+            className="opacity-50"
           />
           {!shouldReduceMotion && (
             <circle r="3.5" fill="var(--ember-400)" filter="url(#glow-filter)">
               <animateMotion
-                path="M 70,260 a 230,175 0 1,0 460,0 a 230,175 0 1,0 -460,0"
+                path="M 30,290 a 270,210 0 1,0 540,0 a 270,210 0 1,0 -540,0"
                 dur="14s"
                 repeatCount="indefinite"
               />
@@ -542,7 +542,7 @@ export const TechEcosystemVisual: React.FC<TechEcosystemVisualProps> = () => {
           )}
         </svg>
 
-        {/* Central Portrait Card Anchor */}
+        {/* Standalone Borderless Enlarged Central Portrait Photo */}
         <div
           className="relative z-20 transition-transform duration-300 ease-out"
           style={{
@@ -551,20 +551,19 @@ export const TechEcosystemVisual: React.FC<TechEcosystemVisualProps> = () => {
               : `translate3d(${mousePos.x * 12}px, ${mousePos.y * 12}px, 0px)`,
           }}
         >
-          <div className="absolute -inset-4 sm:-inset-5 rounded-3xl bg-gradient-to-r from-ember-500/30 via-ember-400/15 to-ember-500/30 blur-md pointer-events-none" />
-          <div className="relative w-[165px] h-[210px] sm:w-[200px] sm:h-[255px] md:w-[230px] md:h-[290px] rounded-2xl border border-ink-700 bg-ink-850 p-1.5 shadow-[0_15px_40px_rgba(0,0,0,0.9)] overflow-hidden group">
+          <div className="absolute -inset-4 sm:-inset-5 rounded-3xl bg-gradient-to-r from-ember-500/25 via-ember-400/15 to-ember-500/25 blur-xl pointer-events-none" />
+          <div className="relative w-[220px] h-[285px] sm:w-[265px] sm:h-[340px] md:w-[310px] md:h-[395px] rounded-2xl overflow-hidden shadow-[0_25px_60px_rgba(0,0,0,0.95)] group">
             <img
               src="/images/monifa-sultana.jpg"
               alt="Monifa Sultana — Web Developer & IT Lecturer"
-              width={230}
-              height={290}
-              className="w-full h-full object-cover object-top rounded-xl transition-transform duration-700 group-hover:scale-105"
+              width={310}
+              height={395}
+              className="w-full h-full object-cover object-top rounded-2xl transition-transform duration-700 group-hover:scale-105"
               loading="eager"
             />
-            <div className="absolute inset-0 rounded-xl pointer-events-none ring-1 ring-inset ring-ember-500/30" />
-            <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink-950 via-ink-950/85 to-transparent p-3 text-center pt-6">
-              <div className="text-sm font-serif text-bone font-medium">Monifa Sultana</div>
-              <div className="text-xs font-mono text-ember-400">Web Dev & IT Lecturer</div>
+            <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink-950 via-ink-950/85 to-transparent p-3.5 sm:p-4 text-center pt-10">
+              <div className="text-base sm:text-lg font-serif text-bone font-medium tracking-tight">Monifa Sultana</div>
+              <div className="text-xs font-mono text-ember-400 font-semibold tracking-wide">Web Dev & IT Lecturer</div>
             </div>
           </div>
         </div>

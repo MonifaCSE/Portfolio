@@ -32,10 +32,10 @@ export const Hero: React.FC<HeroProps> = ({ siteData, projects = [], experience 
     <section className="relative min-h-[calc(100vh-80px)] flex flex-col justify-between py-6 md:py-8 hairline-bottom overflow-hidden">
       {/* Container */}
       <div className="max-w-content mx-auto px-5 sm:px-8 w-full my-auto py-4 md:py-6">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
           
-          {/* Left Column: Identity, Typography & CTAs (Cols 1-5) */}
-          <div className="lg:col-span-5 space-y-5 z-10">
+          {/* Left Column: Identity, Typography & CTAs (Cols 1-6) */}
+          <div className="lg:col-span-6 space-y-6 z-10 flex flex-col justify-start pt-2 lg:pt-3">
             {/* Identity Single Line Eyebrow */}
             <div className="flex items-center gap-2.5">
               <span className="w-2 h-2 rounded-full bg-ember-500 animate-pulse shrink-0" />
@@ -51,7 +51,7 @@ export const Hero: React.FC<HeroProps> = ({ siteData, projects = [], experience 
             </h1>
 
             {/* Subline */}
-            <p className="text-textSoft text-base sm:text-lg font-sans max-w-[50ch] leading-relaxed">
+            <p className="text-textSoft text-base sm:text-lg font-sans max-w-[48ch] leading-relaxed">
               {siteData.subline}
             </p>
 
@@ -64,10 +64,26 @@ export const Hero: React.FC<HeroProps> = ({ siteData, projects = [], experience 
                 Download CV
               </Button>
             </div>
+
+            {/* Quick Pillars / Highlights Block (Fills empty space seamlessly) */}
+            <div className="pt-4 sm:pt-6 border-t border-ink-800/80 grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs font-mono text-textMute">
+              <div className="p-3 rounded-lg border border-ink-800 bg-ink-900/60 hover:border-ink-700 transition-colors">
+                <div className="text-[10px] text-ember-500 font-semibold uppercase tracking-wider mb-1">01 — Web Apps</div>
+                <div className="text-bone font-sans font-medium text-xs leading-snug">Single-Vendor E-Commerce & Admin Systems</div>
+              </div>
+              <div className="p-3 rounded-lg border border-ink-800 bg-ink-900/60 hover:border-ink-700 transition-colors">
+                <div className="text-[10px] text-ember-500 font-semibold uppercase tracking-wider mb-1">02 — Instruction</div>
+                <div className="text-bone font-sans font-medium text-xs leading-snug">OTHM IT Diplomas & University CS Labs</div>
+              </div>
+              <div className="p-3 rounded-lg border border-ink-800 bg-ink-900/60 hover:border-ink-700 transition-colors">
+                <div className="text-[10px] text-ember-500 font-semibold uppercase tracking-wider mb-1">03 — Platforms</div>
+                <div className="text-bone font-sans font-medium text-xs leading-snug">Training Institute & Agency Back-Offices</div>
+              </div>
+            </div>
           </div>
 
-          {/* Right Column: Evidence-based Build ↔ Teach Ecosystem Map (Cols 6-12) */}
-          <div className="lg:col-span-7 w-full flex items-center justify-center z-10">
+          {/* Right Column: Interactive Technology Ecosystem Map (Cols 7-12) */}
+          <div className="lg:col-span-6 w-full flex items-start justify-center z-10">
             <TechEcosystemVisual projects={projects} experience={experience} />
           </div>
         </div>
