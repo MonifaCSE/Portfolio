@@ -4,6 +4,6 @@
   "/robots.txt/route": "app/robots.txt/route.js",
   "/sitemap.xml/route": "app/sitemap.xml/route.js",
   "/privacy/page": "app/privacy/page.js",
-  "/projects/[slug]/page": "app/projects/[slug]/page.js",
-  "/about/page": "app/about/page.js"
+  "/about/page": "app/about/page.js",
+  "/projects/[slug]/page": "app/projects/[slug]/page.js"
 }
