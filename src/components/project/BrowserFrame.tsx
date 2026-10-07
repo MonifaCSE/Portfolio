@@ -5,6 +5,7 @@ import Image from "next/image";
 import { ScreenshotPlaceholder } from "@/components/project/ScreenshotPlaceholder";
 import { ExternalLink } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { getBasePath } from "@/lib/site-url";
 
 export interface BrowserFrameProps {
   src?: string;
@@ -28,6 +29,11 @@ export const BrowserFrame: React.FC<BrowserFrameProps> = ({
   aspectRatio = "aspect-[16/10]",
 }) => {
   const [hasError, setHasError] = React.useState(false);
+
+  const basePath = getBasePath();
+  const imageSrc = src
+    ? (src.startsWith("/") && !src.startsWith(basePath) && basePath ? `${basePath}${src}` : src)
+    : undefined;
 
   // Clean formatted display URL (e.g., buildhub-ecommerce.com)
   const displayUrl = urlLabel || (liveUrl ? liveUrl.replace(/^https?:\/\//, "") : "project preview");
@@ -74,9 +80,9 @@ export const BrowserFrame: React.FC<BrowserFrameProps> = ({
 
       {/* Body Area */}
       <div className={cn("relative w-full bg-ink-900 overflow-hidden", aspectRatio)}>
-        {src && !hasError ? (
+        {imageSrc && !hasError ? (
           <Image
-            src={src}
+            src={imageSrc}
             alt={alt}
             width={width}
             height={height}
