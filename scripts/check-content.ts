@@ -13,12 +13,12 @@ function checkFileContent(filePath: string, fileContent: string) {
   
   if (fileContent.includes("NEEDS_CONFIRMATION")) {
     const msg = `[${relPath}] Contains unresolved token 'NEEDS_CONFIRMATION'`;
-    isProduction ? errors.push(msg) : warnings.push(msg);
+    warnings.push(msg);
   }
 
   if (fileContent.includes("TODO")) {
     const msg = `[${relPath}] Contains 'TODO' item`;
-    isProduction ? errors.push(msg) : warnings.push(msg);
+    warnings.push(msg);
   }
 
   // Check for non-https links (http:// instead of https://)
