@@ -496,12 +496,65 @@ export const TechEcosystemVisual: React.FC<TechEcosystemVisualProps> = () => {
         </div>
       </div>
 
-      {/* Main Interactive Stage */}
+      {/* Mobile Stage Layout (< sm) */}
+      <div className="flex sm:hidden flex-col items-center gap-5 py-2">
+        {/* Standalone Borderless Central Portrait Photo for Mobile */}
+        <div className="relative z-20">
+          <div className="absolute -inset-3 rounded-2xl bg-gradient-to-r from-ember-500/25 via-ember-400/15 to-ember-500/25 blur-lg pointer-events-none" />
+          <div className="relative w-[190px] h-[250px] rounded-2xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.9)] group border border-ink-700/80">
+            <img
+              src={`${getBasePath()}/images/monifa-sultana.jpg`}
+              alt="Monifa Sultana — Web Developer & IT Lecturer"
+              width={190}
+              height={250}
+              className="w-full h-full object-cover object-top rounded-2xl"
+              loading="eager"
+            />
+            <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink-950 via-ink-950/85 to-transparent p-3 text-center pt-8">
+              <div className="text-sm font-serif text-bone font-medium tracking-tight">Monifa Sultana</div>
+              <div className="text-[11px] font-mono text-ember-400 font-semibold tracking-wide">Web Dev & IT Lecturer</div>
+            </div>
+          </div>
+        </div>
+
+        {/* Mobile Tech Cards Grid */}
+        <AnimatePresence mode="wait" initial={false}>
+          <motion.div
+            key={activeTab}
+            initial={{ opacity: 0, y: 8 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -8 }}
+            transition={{ duration: 0.2 }}
+            className="w-full grid grid-cols-2 gap-2 pt-1"
+          >
+            {currentItems.map((item) => (
+              <div
+                key={item.id}
+                className="flex items-center gap-2.5 p-2.5 rounded-xl border border-ink-700/90 bg-ink-850/95 text-bone hover:border-ember-500/60"
+              >
+                <span className="shrink-0 flex items-center justify-center">{item.icon}</span>
+                <div className="flex flex-col min-w-0">
+                  <span className="font-semibold font-sans text-xs text-bone tracking-wide truncate">
+                    {item.name}
+                  </span>
+                  {item.subtitle && (
+                    <span className="text-[10px] font-mono text-textMute truncate">
+                      {item.subtitle}
+                    </span>
+                  )}
+                </div>
+              </div>
+            ))}
+          </motion.div>
+        </AnimatePresence>
+      </div>
+
+      {/* Main Interactive Stage (Desktop & Tablet >= sm) */}
       <div
         id="panel-ecosystem"
         role="tabpanel"
         aria-labelledby={`tab-${activeTab}`}
-        className="relative min-h-[500px] sm:min-h-[540px] md:min-h-[580px] flex items-center justify-center overflow-hidden"
+        className="hidden sm:flex relative min-h-[500px] sm:min-h-[540px] md:min-h-[580px] items-center justify-center overflow-hidden"
       >
         {/* SVG Decorative Orbit & Glow Lines */}
         <svg
