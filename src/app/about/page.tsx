@@ -11,6 +11,7 @@ import {
 import { Timeline } from "@/components/ui/Timeline";
 import { Tag } from "@/components/ui/Tag";
 import { Button } from "@/components/ui/Button";
+import { getBasePath } from "@/lib/site-url";
 
 export const metadata: Metadata = {
   title: "About",
@@ -110,7 +111,7 @@ export default function AboutPage() {
                 <div className="md:col-span-4 space-y-3">
                   <div className="relative rounded-lg border border-ink-700 bg-ink-850 p-1.5 shadow-xl overflow-hidden group">
                     <img
-                      src="/images/monifa-sultana-about.jpg"
+                      src={`${getBasePath()}/images/monifa-sultana-about.jpg`}
                       alt="Monifa Sultana — Web Developer and IT Lecturer"
                       width={280}
                       height={280}

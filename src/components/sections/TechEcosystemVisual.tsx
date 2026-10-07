@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import { useReducedMotion, motion, AnimatePresence } from "framer-motion";
+import { getBasePath } from "@/lib/site-url";
 import { Project, Experience } from "@/lib/schemas";
 import {
   Code2,
@@ -554,7 +555,7 @@ export const TechEcosystemVisual: React.FC<TechEcosystemVisualProps> = () => {
           <div className="absolute -inset-4 sm:-inset-5 rounded-3xl bg-gradient-to-r from-ember-500/25 via-ember-400/15 to-ember-500/25 blur-xl pointer-events-none" />
           <div className="relative w-[220px] h-[285px] sm:w-[265px] sm:h-[340px] md:w-[310px] md:h-[395px] rounded-2xl overflow-hidden shadow-[0_25px_60px_rgba(0,0,0,0.95)] group">
             <img
-              src="/images/monifa-sultana.jpg"
+              src={`${getBasePath()}/images/monifa-sultana.jpg`}
               alt="Monifa Sultana — Web Developer & IT Lecturer"
               width={310}
               height={395}
