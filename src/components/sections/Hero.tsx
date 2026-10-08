@@ -34,8 +34,8 @@ export const Hero: React.FC<HeroProps> = ({ siteData, projects = [], experience 
       <div className="max-w-content mx-auto px-5 sm:px-8 w-full my-auto py-4 md:py-6">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
           
-          {/* Left Column: Identity, Typography & CTAs (Cols 1-6) */}
-          <div className="lg:col-span-6 space-y-6 z-10 flex flex-col justify-start pt-2 lg:pt-3">
+          {/* Identity, Typography & CTAs Column */}
+          <div className="order-2 lg:order-1 lg:col-span-6 space-y-6 z-10 flex flex-col justify-start pt-2 lg:pt-3">
             {/* Identity Single Line Eyebrow */}
             <div className="flex items-center gap-2.5">
               <span className="w-2 h-2 rounded-full bg-ember-500 animate-pulse shrink-0" />
@@ -82,8 +82,8 @@ export const Hero: React.FC<HeroProps> = ({ siteData, projects = [], experience 
             </div>
           </div>
 
-          {/* Right Column: Interactive Technology Ecosystem Map (Cols 7-12) */}
-          <div className="lg:col-span-6 w-full flex items-start justify-center z-10">
+          {/* Interactive Technology Ecosystem Map Column (First on mobile order-1) */}
+          <div className="order-1 lg:order-2 lg:col-span-6 w-full flex items-start justify-center z-10">
             <TechEcosystemVisual projects={projects} experience={experience} />
           </div>
         </div>
