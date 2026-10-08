@@ -65,19 +65,72 @@ export const Hero: React.FC<HeroProps> = ({ siteData, projects = [], experience 
               </Button>
             </div>
 
-            {/* Quick Pillars / Highlights Block (Fills empty space seamlessly) */}
-            <div className="pt-4 sm:pt-6 border-t border-ink-800/80 grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs font-mono text-textMute">
-              <div className="p-3 rounded-lg border border-ink-800 bg-ink-900/60 hover:border-ink-700 transition-colors">
-                <div className="text-[10px] text-ember-500 font-semibold uppercase tracking-wider mb-1">01 — Web Apps</div>
-                <div className="text-bone font-sans font-medium text-xs leading-snug">Single-Vendor E-Commerce & Admin Systems</div>
+            {/* Current Positions & Active Engagements Block */}
+            <div className="pt-4 sm:pt-5 border-t border-ink-800/80 space-y-2.5">
+              <div className="text-[10px] font-mono uppercase tracking-widest text-textMute font-semibold flex items-center gap-1.5">
+                <span className="w-1.5 h-1.5 rounded-full bg-ember-500 inline-block animate-pulse" />
+                <span>Current Positions & Engagements</span>
               </div>
-              <div className="p-3 rounded-lg border border-ink-800 bg-ink-900/60 hover:border-ink-700 transition-colors">
-                <div className="text-[10px] text-ember-500 font-semibold uppercase tracking-wider mb-1">02 — Instruction</div>
-                <div className="text-bone font-sans font-medium text-xs leading-snug">OTHM IT Diplomas & University CS Labs</div>
-              </div>
-              <div className="p-3 rounded-lg border border-ink-800 bg-ink-900/60 hover:border-ink-700 transition-colors">
-                <div className="text-[10px] text-ember-500 font-semibold uppercase tracking-wider mb-1">03 — Platforms</div>
-                <div className="text-bone font-sans font-medium text-xs leading-snug">Training Institute & Agency Back-Offices</div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs font-mono">
+                {/* Position 1: Sevix Global */}
+                <a
+                  href="https://sevixglobal.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group relative p-3 rounded-xl border border-ink-700/80 bg-ink-900/90 hover:border-ember-500/60 hover:bg-ink-850 hover:shadow-[0_10px_25px_rgba(232,116,59,0.15)] transition-all duration-300 block overflow-hidden"
+                >
+                  <div className="flex items-center justify-between gap-1 mb-1.5">
+                    <span className="text-[9px] font-mono text-ember-400 font-semibold uppercase tracking-wider flex items-center gap-1">
+                      <span className="w-1.5 h-1.5 rounded-full bg-ember-500 inline-block animate-pulse" />
+                      Active Role
+                    </span>
+                    <span className="text-[10px] font-mono text-textMute group-hover:text-bone transition-colors">↗</span>
+                  </div>
+                  <div className="text-bone font-sans font-semibold text-xs leading-snug group-hover:text-ember-400 transition-colors">
+                    Web Developer
+                  </div>
+                  <div className="text-[11px] font-mono text-textMute pt-0.5 truncate">
+                    Sevix Global
+                  </div>
+                  <div className="absolute inset-x-0 bottom-0 h-[2px] bg-gradient-to-r from-ember-500/0 via-ember-500 to-ember-500/0 opacity-0 group-hover:opacity-100 transition-opacity" />
+                </a>
+
+                {/* Position 2: AIMS Academy */}
+                <div className="group relative p-3 rounded-xl border border-ink-700/80 bg-ink-900/90 hover:border-ember-500/60 hover:bg-ink-850 hover:shadow-[0_10px_25px_rgba(232,116,59,0.15)] transition-all duration-300 block overflow-hidden">
+                  <div className="flex items-center justify-between gap-1 mb-1.5">
+                    <span className="text-[9px] font-mono text-ember-400 font-semibold uppercase tracking-wider flex items-center gap-1">
+                      <span className="w-1.5 h-1.5 rounded-full bg-ember-500 inline-block animate-pulse" />
+                      Active Role
+                    </span>
+                    <span className="text-[10px] font-mono text-textMute">OTHM L3–L6</span>
+                  </div>
+                  <div className="text-bone font-sans font-semibold text-xs leading-snug group-hover:text-ember-400 transition-colors">
+                    IT Lecturer
+                  </div>
+                  <div className="text-[11px] font-mono text-textMute pt-0.5 truncate">
+                    AIMS Academy
+                  </div>
+                  <div className="absolute inset-x-0 bottom-0 h-[2px] bg-gradient-to-r from-ember-500/0 via-ember-500 to-ember-500/0 opacity-0 group-hover:opacity-100 transition-opacity" />
+                </div>
+
+                {/* Position 3: IIUC Postgraduate */}
+                <div className="group relative p-3 rounded-xl border border-ink-700/80 bg-ink-900/90 hover:border-amber-400/60 hover:bg-ink-850 hover:shadow-[0_10px_25px_rgba(245,158,11,0.15)] transition-all duration-300 block overflow-hidden">
+                  <div className="flex items-center justify-between gap-1 mb-1.5">
+                    <span className="text-[9px] font-mono text-amber-400 font-semibold uppercase tracking-wider flex items-center gap-1">
+                      <span className="w-1.5 h-1.5 rounded-full bg-amber-400 inline-block" />
+                      Academic
+                    </span>
+                    <span className="text-[10px] font-mono text-textMute">Pursuing</span>
+                  </div>
+                  <div className="text-bone font-sans font-semibold text-xs leading-snug group-hover:text-amber-400 transition-colors">
+                    MSc in CSE
+                  </div>
+                  <div className="text-[11px] font-mono text-textMute pt-0.5 truncate">
+                    IIUC Dept. of CSE
+                  </div>
+                  <div className="absolute inset-x-0 bottom-0 h-[2px] bg-gradient-to-r from-amber-400/0 via-amber-400 to-amber-400/0 opacity-0 group-hover:opacity-100 transition-opacity" />
+                </div>
               </div>
             </div>
           </div>
