@@ -558,15 +558,26 @@ export const TechEcosystemVisual: React.FC<TechEcosystemVisualProps> = () => {
           }}
         >
           <div className="absolute -inset-4 sm:-inset-6 rounded-full bg-gradient-to-tr from-ember-500/20 via-amber-500/15 to-transparent blur-2xl pointer-events-none" />
-          <div className="relative w-[210px] h-[275px] xs:w-[230px] xs:h-[300px] sm:w-[280px] sm:h-[365px] md:w-[330px] md:h-[430px] overflow-hidden group border-0 shadow-none">
+          <div className="relative w-[200px] h-[260px] xs:w-[220px] xs:h-[285px] sm:w-[265px] sm:h-[345px] md:w-[310px] md:h-[405px] overflow-hidden group border-0 shadow-none">
             <img
               src={`${getBasePath()}/images/monifa-sultana.jpg`}
               alt="Monifa Sultana — Web Developer & IT Lecturer"
-              width={330}
-              height={430}
+              width={310}
+              height={405}
               className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105 filter drop-shadow-[0_20px_35px_rgba(0,0,0,0.85)]"
               loading="eager"
             />
+          </div>
+
+          {/* Clean Borderless Identity Label directly under the photo */}
+          <div className="pt-2 text-center pointer-events-none z-30">
+            <div className="text-sm sm:text-base md:text-lg font-serif text-bone font-medium tracking-tight drop-shadow-md">
+              Monifa Sultana
+            </div>
+            <div className="text-[11px] sm:text-xs font-mono text-ember-400 font-semibold tracking-wide flex items-center justify-center gap-1.5 pt-0.5">
+              <span className="w-1.5 h-1.5 rounded-full bg-ember-500 animate-pulse shrink-0" />
+              <span>Web Developer & IT Lecturer</span>
+            </div>
           </div>
         </div>
 
