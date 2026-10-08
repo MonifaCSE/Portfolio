@@ -31,7 +31,9 @@ interface TechCardItem {
   category: EcosystemTab;
   icon: React.ReactNode;
   top: string;
-  left: string;
+  left?: string;
+  right?: string;
+  transform?: string;
   zIndex: number;
   scale?: number;
   duration: string;
@@ -65,12 +67,12 @@ export const TechEcosystemVisual: React.FC<TechEcosystemVisualProps> = () => {
       category: "build",
       subtitle: "PHP Framework",
       icon: (
-        <svg className="w-5 h-5 shrink-0 text-[#FF2D20]" viewBox="0 0 24 24" fill="currentColor">
+        <svg className="w-4 h-4 sm:w-5 sm:h-5 shrink-0 text-[#FF2D20]" viewBox="0 0 24 24" fill="currentColor">
           <path d="M5.5 3L12 6.8L18.5 3L22 5V19L18.5 21L12 17.2L5.5 21L2 19V5L5.5 3ZM12 8.9L7.5 6.3V11.5L12 14.1L16.5 11.5V6.3L12 8.9Z" />
         </svg>
       ),
-      top: "8%",
-      left: "4%",
+      top: "10%",
+      left: "1%",
       zIndex: 25,
       duration: "5.5s",
       delay: "0s",
@@ -81,15 +83,15 @@ export const TechEcosystemVisual: React.FC<TechEcosystemVisualProps> = () => {
       category: "build",
       subtitle: "Core Language",
       icon: (
-        <svg className="w-6 h-4 shrink-0" viewBox="0 0 32 18" fill="none">
+        <svg className="w-5 h-3.5 sm:w-6 sm:h-4 shrink-0" viewBox="0 0 32 18" fill="none">
           <rect width="32" height="18" rx="4" fill="#777BB4" />
           <text x="16" y="13" fill="#FFFFFF" fontSize="10" fontWeight="bold" fontFamily="sans-serif" textAnchor="middle">
             php
           </text>
         </svg>
       ),
-      top: "34%",
-      left: "2%",
+      top: "35%",
+      left: "1%",
       zIndex: 20,
       duration: "6.2s",
       delay: "1.2s",
@@ -100,12 +102,12 @@ export const TechEcosystemVisual: React.FC<TechEcosystemVisualProps> = () => {
       category: "build",
       subtitle: "Database Engine",
       icon: (
-        <svg className="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="#00758F">
+        <svg className="w-4 h-4 sm:w-5 sm:h-5 shrink-0" viewBox="0 0 24 24" fill="#00758F">
           <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 14.5h-2v-2h2v2zm0-4h-2V7h2v5.5z" />
         </svg>
       ),
-      top: "62%",
-      left: "4%",
+      top: "60%",
+      left: "1%",
       zIndex: 20,
       duration: "4.8s",
       delay: "0.5s",
@@ -116,12 +118,12 @@ export const TechEcosystemVisual: React.FC<TechEcosystemVisualProps> = () => {
       category: "build",
       subtitle: "Version Control",
       icon: (
-        <svg className="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="#F05032">
+        <svg className="w-4 h-4 sm:w-5 sm:h-5 shrink-0" viewBox="0 0 24 24" fill="#F05032">
           <path d="M21.6 10.9L13.1 2.4C12.5 1.8 11.5 1.8 10.9 2.4L2.4 10.9C1.8 11.5 1.8 12.5 2.4 13.1L10.9 21.6C11.5 22.2 12.5 22.2 13.1 21.6L21.6 13.1C22.2 12.5 22.2 11.5 21.6 10.9ZM13.8 14.8C13.4 15.1 12.8 15.1 12.4 14.8L9.7 12.1V15.1C9.9 15.3 10 15.6 10 16C10 16.6 9.6 17 9 17C8.4 17 8 16.6 8 16C8 15.5 8.3 15.1 8.7 15V10.2C8.3 10.1 8 9.7 8 9.2C8 8.6 8.4 8.2 9 8.2C9.6 8.2 10 8.6 10 9.2C10 9.6 9.8 9.9 9.5 10.1L12.1 12.7C12.3 12.5 12.6 12.4 13 12.4C14 13.4 14 12.8 14 13.4C14 13.9 13.9 14.5 13.8 14.8Z" />
         </svg>
       ),
       top: "84%",
-      left: "6%",
+      left: "1%",
       zIndex: 20,
       duration: "6.5s",
       delay: "1.8s",
@@ -132,15 +134,15 @@ export const TechEcosystemVisual: React.FC<TechEcosystemVisualProps> = () => {
       category: "build",
       subtitle: "ES6+ Logic",
       icon: (
-        <svg className="w-5 h-5 shrink-0 rounded-[2px] overflow-hidden" viewBox="0 0 24 24" fill="none">
+        <svg className="w-4 h-4 sm:w-5 sm:h-5 shrink-0 rounded-[2px] overflow-hidden" viewBox="0 0 24 24" fill="none">
           <rect width="24" height="24" fill="#F7DF1E" />
           <text x="17" y="18" fill="#000000" fontSize="11" fontWeight="900" fontFamily="sans-serif" textAnchor="end">
             JS
           </text>
         </svg>
       ),
-      top: "8%",
-      left: "64%",
+      top: "10%",
+      right: "1%",
       zIndex: 25,
       duration: "5.8s",
       delay: "0.8s",
@@ -151,12 +153,12 @@ export const TechEcosystemVisual: React.FC<TechEcosystemVisualProps> = () => {
       category: "build",
       subtitle: "Utility Styling",
       icon: (
-        <svg className="w-5 h-4 shrink-0" viewBox="0 0 24 14" fill="#06B6D4">
+        <svg className="w-4 h-3 sm:w-5 sm:h-4 shrink-0" viewBox="0 0 24 14" fill="#06B6D4">
           <path d="M12.001 0C9.601 0 8.101 1.2 7.501 3.6C8.401 2.4 9.451 2.1 10.651 2.7C11.336 3.042 11.828 3.542 12.376 4.099C13.269 5.008 14.288 6.042 17.501 6.042C19.901 6.042 21.401 4.842 22.001 2.442C21.101 3.642 20.051 3.942 18.851 3.342C18.166 2.999 17.674 2.499 17.126 1.942C16.233 1.033 15.214 0 12.001 0ZM7.501 6.042C5.101 6.042 3.601 7.242 3.001 9.642C3.901 8.442 4.951 8.142 6.151 8.742C6.836 9.085 7.328 9.585 7.876 10.142C8.769 11.051 9.788 12.084 13.001 12.084C15.401 12.084 16.901 10.884 17.501 8.484C16.601 9.684 15.551 9.984 14.351 9.384C13.666 9.041 13.174 8.541 12.626 7.984C11.733 7.075 10.714 6.042 7.501 6.042Z" />
         </svg>
       ),
-      top: "34%",
-      left: "66%",
+      top: "35%",
+      right: "1%",
       zIndex: 20,
       duration: "5.2s",
       delay: "0.3s",
@@ -167,13 +169,13 @@ export const TechEcosystemVisual: React.FC<TechEcosystemVisualProps> = () => {
       category: "build",
       subtitle: "Reactive UI",
       icon: (
-        <svg className="w-5 h-4 shrink-0" viewBox="0 0 24 16" fill="none">
+        <svg className="w-4 h-3 sm:w-5 sm:h-4 shrink-0" viewBox="0 0 24 16" fill="none">
           <path d="M17.5 16L24 9.5L17.5 3L11 9.5L17.5 16Z" fill="#8BC0D0" />
           <path d="M6.5 16L0 9.5L6.5 3L13 9.5L6.5 16Z" fill="#2D3748" />
         </svg>
       ),
       top: "60%",
-      left: "64%",
+      right: "1%",
       zIndex: 20,
       duration: "6.8s",
       delay: "0.7s",
@@ -184,12 +186,12 @@ export const TechEcosystemVisual: React.FC<TechEcosystemVisualProps> = () => {
       category: "build",
       subtitle: "Full-Stack Components",
       icon: (
-        <svg className="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="#FB70A9">
+        <svg className="w-4 h-4 sm:w-5 sm:h-5 shrink-0" viewBox="0 0 24 24" fill="#FB70A9">
           <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
         </svg>
       ),
       top: "84%",
-      left: "62%",
+      right: "1%",
       zIndex: 20,
       duration: "6.4s",
       delay: "1.4s",
@@ -200,12 +202,13 @@ export const TechEcosystemVisual: React.FC<TechEcosystemVisualProps> = () => {
       category: "build",
       subtitle: "Admin Panel Engine",
       icon: (
-        <svg className="w-5 h-5 shrink-0 text-amber-400" viewBox="0 0 24 24" fill="currentColor">
+        <svg className="w-4 h-4 sm:w-5 sm:h-5 shrink-0 text-amber-400" viewBox="0 0 24 24" fill="currentColor">
           <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
         </svg>
       ),
-      top: "2%",
-      left: "35%",
+      top: "1.5%",
+      left: "50%",
+      transform: "translateX(-50%)",
       zIndex: 15,
       duration: "6.0s",
       delay: "1.5s",
@@ -216,12 +219,13 @@ export const TechEcosystemVisual: React.FC<TechEcosystemVisualProps> = () => {
       category: "build",
       subtitle: "Frontend Build Tool",
       icon: (
-        <svg className="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="none">
+        <svg className="w-4 h-4 sm:w-5 sm:h-5 shrink-0" viewBox="0 0 24 24" fill="none">
           <path d="M21.5 3.5L12 21 2.5 3.5 7.5 4l4.5 9 4.5-9 5-.5z" fill="#BD34FE" />
         </svg>
       ),
-      top: "88%",
-      left: "36%",
+      top: "87%",
+      left: "50%",
+      transform: "translateX(-50%)",
       zIndex: 15,
       duration: "5.0s",
       delay: "1.1s",
@@ -236,12 +240,12 @@ export const TechEcosystemVisual: React.FC<TechEcosystemVisualProps> = () => {
       category: "ai",
       subtitle: "Workflow Orchestration",
       icon: (
-        <svg className="w-5 h-5 shrink-0 text-[#FF6584]" viewBox="0 0 24 24" fill="currentColor">
+        <svg className="w-4 h-4 sm:w-5 sm:h-5 shrink-0 text-[#FF6584]" viewBox="0 0 24 24" fill="currentColor">
           <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9v-2h2v2zm0-4H9V7h2v5zm4 4h-2v-5h2v5zm0-7h-2V7h2v2z" />
         </svg>
       ),
       top: "10%",
-      left: "5%",
+      left: "1%",
       zIndex: 25,
       duration: "4.5s",
       delay: "0.2s",
@@ -252,14 +256,14 @@ export const TechEcosystemVisual: React.FC<TechEcosystemVisualProps> = () => {
       category: "ai",
       subtitle: "Cloud Integrations",
       icon: (
-        <svg className="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="none">
+        <svg className="w-4 h-4 sm:w-5 sm:h-5 shrink-0" viewBox="0 0 24 24" fill="none">
           <circle cx="6" cy="12" r="4" fill="#6D00F6" />
           <circle cx="18" cy="12" r="4" fill="#00C2FF" />
           <path d="M6 12h12" stroke="#6D00F6" strokeWidth="2" />
         </svg>
       ),
       top: "42%",
-      left: "3%",
+      left: "1%",
       zIndex: 20,
       duration: "5.7s",
       delay: "1.0s",
@@ -269,9 +273,9 @@ export const TechEcosystemVisual: React.FC<TechEcosystemVisualProps> = () => {
       name: "REST & Webhooks",
       category: "ai",
       subtitle: "API Data Pipelines",
-      icon: <Network className="w-5 h-5 text-ember-400 shrink-0" />,
-      top: "75%",
-      left: "6%",
+      icon: <Network className="w-4 h-4 sm:w-5 sm:h-5 text-ember-400 shrink-0" />,
+      top: "76%",
+      left: "1%",
       zIndex: 20,
       duration: "6.1s",
       delay: "0.6s",
@@ -281,9 +285,9 @@ export const TechEcosystemVisual: React.FC<TechEcosystemVisualProps> = () => {
       name: "AI Agents & LLMs",
       category: "ai",
       subtitle: "Smart Workflows",
-      icon: <Bot className="w-5 h-5 text-ember-500 shrink-0" />,
+      icon: <Bot className="w-4 h-4 sm:w-5 sm:h-5 text-ember-500 shrink-0" />,
       top: "10%",
-      left: "62%",
+      right: "1%",
       zIndex: 25,
       duration: "5.1s",
       delay: "1.7s",
@@ -294,13 +298,13 @@ export const TechEcosystemVisual: React.FC<TechEcosystemVisualProps> = () => {
       category: "ai",
       subtitle: "ML & Deep Learning",
       icon: (
-        <svg className="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="none">
+        <svg className="w-4 h-4 sm:w-5 sm:h-5 shrink-0" viewBox="0 0 24 24" fill="none">
           <path d="M11.8 2C6.8 2 7.1 4.2 7.1 4.2V6.4H12V7.1H5.3C3 7.1 1.5 8.7 1.5 11.4C1.5 14.1 2.8 15.2 4.8 15.2H6.4V13.2C6.4 10.9 8.2 9.2 8.5 9.2H15.1C16.7 9.2 18 7.9 18 6.3V4.2C18.1 2 13.8 2 11.8 2Z" fill="#3776AB" />
           <path d="M12.2 22C17.2 22 16.9 19.8 16.9 19.8V17.6H12V16.9H18.7C21 16.9 22.5 15.3 22.5 12.6C22.5 9.9 21.2 8.8 19.2 8.8H17.6V10.8C17.6 13.1 15.8 14.8 13.5 14.8H8.9C7.3 14.8 6 16.1 6 17.7V19.8C5.9 22 10.2 22 12.2 22Z" fill="#FFD43B" />
         </svg>
       ),
       top: "44%",
-      left: "64%",
+      right: "1%",
       zIndex: 20,
       duration: "6.4s",
       delay: "1.4s",
@@ -310,9 +314,9 @@ export const TechEcosystemVisual: React.FC<TechEcosystemVisualProps> = () => {
       name: "Process Automation",
       category: "ai",
       subtitle: "Business Workflows",
-      icon: <Workflow className="w-5 h-5 text-amber-400 shrink-0" />,
+      icon: <Workflow className="w-4 h-4 sm:w-5 sm:h-5 text-amber-400 shrink-0" />,
       top: "76%",
-      left: "60%",
+      right: "1%",
       zIndex: 20,
       duration: "5.9s",
       delay: "0.9s",
@@ -322,13 +326,26 @@ export const TechEcosystemVisual: React.FC<TechEcosystemVisualProps> = () => {
   // 3. Teaching & Academic Items
   const teachItems: TechCardItem[] = [
     {
+      id: "othm-curriculum",
+      name: "OTHM Diplomas",
+      category: "teach",
+      subtitle: "Level 3, 4, 5 & 6 IT",
+      icon: <Layers className="w-4 h-4 sm:w-5 sm:h-5 text-ember-500 shrink-0" />,
+      top: "1.5%",
+      left: "50%",
+      transform: "translateX(-50%)",
+      zIndex: 15,
+      duration: "5.0s",
+      delay: "0.6s",
+    },
+    {
       id: "aims-academy",
       name: "AIMS Academy",
       category: "teach",
       subtitle: "IT Lecturer (OTHM L3/L4/L5/L6)",
-      icon: <GraduationCap className="w-5 h-5 text-ember-400 shrink-0" />,
+      icon: <GraduationCap className="w-4 h-4 sm:w-5 sm:h-5 text-ember-400 shrink-0" />,
       top: "10%",
-      left: "5%",
+      left: "1%",
       zIndex: 25,
       duration: "5.2s",
       delay: "0s",
@@ -338,9 +355,9 @@ export const TechEcosystemVisual: React.FC<TechEcosystemVisualProps> = () => {
       name: "GMIT Academy",
       category: "teach",
       subtitle: "AI & ML Lab Instructor",
-      icon: <Cpu className="w-5 h-5 text-ember-500 shrink-0" />,
-      top: "40%",
-      left: "3%",
+      icon: <Cpu className="w-4 h-4 sm:w-5 sm:h-5 text-ember-500 shrink-0" />,
+      top: "42%",
+      left: "1%",
       zIndex: 20,
       duration: "6.0s",
       delay: "0.8s",
@@ -350,9 +367,9 @@ export const TechEcosystemVisual: React.FC<TechEcosystemVisualProps> = () => {
       name: "IIUC CSE Dept.",
       category: "teach",
       subtitle: "Adjunct Lecturer (2024–25)",
-      icon: <BookOpen className="w-5 h-5 text-amber-400 shrink-0" />,
+      icon: <BookOpen className="w-4 h-4 sm:w-5 sm:h-5 text-amber-400 shrink-0" />,
       top: "75%",
-      left: "6%",
+      left: "1%",
       zIndex: 20,
       duration: "5.6s",
       delay: "1.4s",
@@ -362,9 +379,9 @@ export const TechEcosystemVisual: React.FC<TechEcosystemVisualProps> = () => {
       name: "IIUC Labs",
       category: "teach",
       subtitle: "Teaching Assistant (2022–23)",
-      icon: <Terminal className="w-5 h-5 text-ember-400 shrink-0" />,
+      icon: <Terminal className="w-4 h-4 sm:w-5 sm:h-5 text-ember-400 shrink-0" />,
       top: "10%",
-      left: "62%",
+      right: "1%",
       zIndex: 25,
       duration: "5.8s",
       delay: "0.4s",
@@ -375,13 +392,13 @@ export const TechEcosystemVisual: React.FC<TechEcosystemVisualProps> = () => {
       category: "teach",
       subtitle: "Guided Web Labs",
       icon: (
-        <svg className="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="none">
+        <svg className="w-4 h-4 sm:w-5 sm:h-5 shrink-0" viewBox="0 0 24 24" fill="none">
           <path d="M11.8 2C6.8 2 7.1 4.2 7.1 4.2V6.4H12V7.1H5.3C3 7.1 1.5 8.7 1.5 11.4C1.5 14.1 2.8 15.2 4.8 15.2H6.4V13.2C6.4 10.9 8.2 9.2 8.5 9.2H15.1C16.7 9.2 18 7.9 18 6.3V4.2C18.1 2 13.8 2 11.8 2Z" fill="#3776AB" />
           <path d="M12.2 22C17.2 22 16.9 19.8 16.9 19.8V17.6H12V16.9H18.7C21 16.9 22.5 15.3 22.5 12.6C22.5 9.9 21.2 8.8 19.2 8.8H17.6V10.8C17.6 13.1 15.8 14.8 13.5 14.8H8.9C7.3 14.8 6 16.1 6 17.7V19.8C5.9 22 10.2 22 12.2 22Z" fill="#FFD43B" />
         </svg>
       ),
       top: "42%",
-      left: "65%",
+      right: "1%",
       zIndex: 20,
       duration: "6.4s",
       delay: "1.0s",
@@ -391,24 +408,12 @@ export const TechEcosystemVisual: React.FC<TechEcosystemVisualProps> = () => {
       name: "C++ & Compiler Design",
       category: "teach",
       subtitle: "Theory & Practice",
-      icon: <Code2 className="w-5 h-5 text-ember-400 shrink-0" />,
+      icon: <Code2 className="w-4 h-4 sm:w-5 sm:h-5 text-ember-400 shrink-0" />,
       top: "75%",
-      left: "62%",
+      right: "1%",
       zIndex: 20,
       duration: "5.4s",
       delay: "1.6s",
-    },
-    {
-      id: "othm-curriculum",
-      name: "OTHM Diplomas",
-      category: "teach",
-      subtitle: "Level 3, 4, 5 & 6 IT",
-      icon: <Layers className="w-5 h-5 text-ember-500 shrink-0" />,
-      top: "3%",
-      left: "35%",
-      zIndex: 15,
-      duration: "5.0s",
-      delay: "0.6s",
     },
   ];
 
@@ -420,7 +425,7 @@ export const TechEcosystemVisual: React.FC<TechEcosystemVisualProps> = () => {
       ref={containerRef}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      className="relative w-full rounded-2xl border border-ink-700/90 bg-ink-900/95 shadow-[0_20px_50px_rgba(0,0,0,0.7)] overflow-hidden select-none p-4 sm:p-6"
+      className="relative w-full rounded-2xl border border-ink-700/90 bg-ink-900/95 shadow-[0_20px_50px_rgba(0,0,0,0.7)] overflow-hidden select-none p-3 sm:p-6"
     >
       {/* Background Dot Grid */}
       <div className="absolute inset-0 bg-[radial-gradient(#2A2F36_1px,transparent_1px)] [background-size:22px_22px] opacity-35 pointer-events-none" />
@@ -448,7 +453,7 @@ export const TechEcosystemVisual: React.FC<TechEcosystemVisualProps> = () => {
             aria-controls="panel-ecosystem"
             tabIndex={activeTab === "build" ? 0 : -1}
             onClick={() => setActiveTab("build")}
-            className={`flex-1 sm:flex-initial flex items-center justify-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-mono font-medium transition-all duration-200 focus-visible:ring-2 focus-visible:ring-ember-500 focus-visible:outline-none ${
+            className={`flex-1 sm:flex-initial flex items-center justify-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-lg text-[11px] sm:text-xs font-mono font-medium transition-all duration-200 focus-visible:ring-2 focus-visible:ring-ember-500 focus-visible:outline-none ${
               activeTab === "build"
                 ? "border border-ink-600 bg-ink-800 text-bone shadow-sm"
                 : "text-textMute hover:text-bone hover:bg-ink-900/50"
@@ -466,7 +471,7 @@ export const TechEcosystemVisual: React.FC<TechEcosystemVisualProps> = () => {
             aria-controls="panel-ecosystem"
             tabIndex={activeTab === "ai" ? 0 : -1}
             onClick={() => setActiveTab("ai")}
-            className={`flex-1 sm:flex-initial flex items-center justify-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-mono font-medium transition-all duration-200 focus-visible:ring-2 focus-visible:ring-ember-500 focus-visible:outline-none ${
+            className={`flex-1 sm:flex-initial flex items-center justify-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-lg text-[11px] sm:text-xs font-mono font-medium transition-all duration-200 focus-visible:ring-2 focus-visible:ring-ember-500 focus-visible:outline-none ${
               activeTab === "ai"
                 ? "border border-ember-500/50 bg-ember-wash/40 text-bone shadow-sm"
                 : "text-textMute hover:text-bone hover:bg-ink-900/50"
@@ -484,7 +489,7 @@ export const TechEcosystemVisual: React.FC<TechEcosystemVisualProps> = () => {
             aria-controls="panel-ecosystem"
             tabIndex={activeTab === "teach" ? 0 : -1}
             onClick={() => setActiveTab("teach")}
-            className={`flex-1 sm:flex-initial flex items-center justify-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-mono font-medium transition-all duration-200 focus-visible:ring-2 focus-visible:ring-ember-500 focus-visible:outline-none ${
+            className={`flex-1 sm:flex-initial flex items-center justify-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-lg text-[11px] sm:text-xs font-mono font-medium transition-all duration-200 focus-visible:ring-2 focus-visible:ring-ember-500 focus-visible:outline-none ${
               activeTab === "teach"
                 ? "border border-amber-500/50 bg-amber-500/10 text-bone shadow-sm"
                 : "text-textMute hover:text-bone hover:bg-ink-900/50"
@@ -496,65 +501,12 @@ export const TechEcosystemVisual: React.FC<TechEcosystemVisualProps> = () => {
         </div>
       </div>
 
-      {/* Mobile Stage Layout (< sm) */}
-      <div className="flex sm:hidden flex-col items-center gap-5 py-2">
-        {/* Standalone Borderless Central Portrait Photo for Mobile */}
-        <div className="relative z-20">
-          <div className="absolute -inset-3 rounded-2xl bg-gradient-to-r from-ember-500/25 via-ember-400/15 to-ember-500/25 blur-lg pointer-events-none" />
-          <div className="relative w-[190px] h-[250px] rounded-2xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.9)] group border border-ink-700/80">
-            <img
-              src={`${getBasePath()}/images/monifa-sultana.jpg`}
-              alt="Monifa Sultana — Web Developer & IT Lecturer"
-              width={190}
-              height={250}
-              className="w-full h-full object-cover object-top rounded-2xl"
-              loading="eager"
-            />
-            <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink-950 via-ink-950/85 to-transparent p-3 text-center pt-8">
-              <div className="text-sm font-serif text-bone font-medium tracking-tight">Monifa Sultana</div>
-              <div className="text-[11px] font-mono text-ember-400 font-semibold tracking-wide">Web Dev & IT Lecturer</div>
-            </div>
-          </div>
-        </div>
-
-        {/* Mobile Tech Cards Grid */}
-        <AnimatePresence mode="wait" initial={false}>
-          <motion.div
-            key={activeTab}
-            initial={{ opacity: 0, y: 8 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -8 }}
-            transition={{ duration: 0.2 }}
-            className="w-full grid grid-cols-2 gap-2 pt-1"
-          >
-            {currentItems.map((item) => (
-              <div
-                key={item.id}
-                className="flex items-center gap-2.5 p-2.5 rounded-xl border border-ink-700/90 bg-ink-850/95 text-bone hover:border-ember-500/60"
-              >
-                <span className="shrink-0 flex items-center justify-center">{item.icon}</span>
-                <div className="flex flex-col min-w-0">
-                  <span className="font-semibold font-sans text-xs text-bone tracking-wide truncate">
-                    {item.name}
-                  </span>
-                  {item.subtitle && (
-                    <span className="text-[10px] font-mono text-textMute truncate">
-                      {item.subtitle}
-                    </span>
-                  )}
-                </div>
-              </div>
-            ))}
-          </motion.div>
-        </AnimatePresence>
-      </div>
-
-      {/* Main Interactive Stage (Desktop & Tablet >= sm) */}
+      {/* Main Interactive Stage (Fully Dynamic Floating Orbit Canvas on Mobile & Desktop) */}
       <div
         id="panel-ecosystem"
         role="tabpanel"
         aria-labelledby={`tab-${activeTab}`}
-        className="hidden sm:flex relative min-h-[500px] sm:min-h-[540px] md:min-h-[580px] items-center justify-center overflow-hidden"
+        className="relative min-h-[480px] xs:min-h-[520px] sm:min-h-[540px] md:min-h-[580px] flex items-center justify-center overflow-hidden"
       >
         {/* SVG Decorative Orbit & Glow Lines */}
         <svg
@@ -596,7 +548,7 @@ export const TechEcosystemVisual: React.FC<TechEcosystemVisualProps> = () => {
           )}
         </svg>
 
-        {/* Standalone Borderless Enlarged Central Portrait Photo */}
+        {/* Standalone Borderless Central Portrait Photo */}
         <div
           className="relative z-20 transition-transform duration-300 ease-out"
           style={{
@@ -605,8 +557,8 @@ export const TechEcosystemVisual: React.FC<TechEcosystemVisualProps> = () => {
               : `translate3d(${mousePos.x * 12}px, ${mousePos.y * 12}px, 0px)`,
           }}
         >
-          <div className="absolute -inset-4 sm:-inset-5 rounded-3xl bg-gradient-to-r from-ember-500/25 via-ember-400/15 to-ember-500/25 blur-xl pointer-events-none" />
-          <div className="relative w-[220px] h-[285px] sm:w-[265px] sm:h-[340px] md:w-[310px] md:h-[395px] rounded-2xl overflow-hidden shadow-[0_25px_60px_rgba(0,0,0,0.95)] group">
+          <div className="absolute -inset-3 sm:-inset-5 rounded-3xl bg-gradient-to-r from-ember-500/25 via-ember-400/15 to-ember-500/25 blur-xl pointer-events-none" />
+          <div className="relative w-[150px] h-[195px] xs:w-[175px] xs:h-[230px] sm:w-[265px] sm:h-[340px] md:w-[310px] md:h-[395px] rounded-2xl overflow-hidden shadow-[0_25px_60px_rgba(0,0,0,0.95)] group border border-ink-700/80">
             <img
               src={`${getBasePath()}/images/monifa-sultana.jpg`}
               alt="Monifa Sultana — Web Developer & IT Lecturer"
@@ -615,9 +567,9 @@ export const TechEcosystemVisual: React.FC<TechEcosystemVisualProps> = () => {
               className="w-full h-full object-cover object-top rounded-2xl transition-transform duration-700 group-hover:scale-105"
               loading="eager"
             />
-            <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink-950 via-ink-950/85 to-transparent p-3.5 sm:p-4 text-center pt-10">
-              <div className="text-base sm:text-lg font-serif text-bone font-medium tracking-tight">Monifa Sultana</div>
-              <div className="text-xs font-mono text-ember-400 font-semibold tracking-wide">Web Dev & IT Lecturer</div>
+            <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink-950 via-ink-950/85 to-transparent p-2.5 sm:p-4 text-center pt-8 sm:pt-10">
+              <div className="text-xs sm:text-base md:text-lg font-serif text-bone font-medium tracking-tight">Monifa Sultana</div>
+              <div className="text-[10px] sm:text-xs font-mono text-ember-400 font-semibold tracking-wide">Web Dev & IT Lecturer</div>
             </div>
           </div>
         </div>
@@ -642,8 +594,17 @@ export const TechEcosystemVisual: React.FC<TechEcosystemVisualProps> = () => {
                   style={{
                     top: item.top,
                     left: item.left,
+                    right: item.right,
                     zIndex: item.zIndex,
-                    transform: shouldReduceMotion
+                    transform: item.transform
+                      ? `${item.transform} ${
+                          shouldReduceMotion
+                            ? `scale(${item.scale || 1})`
+                            : `translate3d(${mousePos.x * parallaxFactor}px, ${
+                                mousePos.y * parallaxFactor
+                              }px, 0px) scale(${item.scale || 1})`
+                        }`
+                      : shouldReduceMotion
                       ? `scale(${item.scale || 1})`
                       : `translate3d(${mousePos.x * parallaxFactor}px, ${
                           mousePos.y * parallaxFactor
@@ -651,7 +612,7 @@ export const TechEcosystemVisual: React.FC<TechEcosystemVisualProps> = () => {
                   }}
                 >
                   <div
-                    className={`relative group flex items-center gap-2.5 px-3.5 py-2 sm:px-4 sm:py-2.5 rounded-xl border text-xs font-mono shadow-2xl transition-all duration-300 ${
+                    className={`relative group flex items-center gap-1.5 sm:gap-2.5 px-2 py-1.5 xs:px-3 xs:py-2 sm:px-4 sm:py-2.5 rounded-xl border text-[11px] sm:text-xs font-mono shadow-2xl transition-all duration-300 ${
                       shouldReduceMotion ? "" : "animate-float"
                     } border-ink-700/90 bg-ink-850/95 text-bone hover:border-ember-500/60 hover:bg-ink-800 hover:shadow-[0_0_20px_rgba(232,116,59,0.25)]`}
                     style={{
@@ -660,12 +621,12 @@ export const TechEcosystemVisual: React.FC<TechEcosystemVisualProps> = () => {
                     }}
                   >
                     <span className="shrink-0 flex items-center justify-center">{item.icon}</span>
-                    <div className="flex flex-col">
-                      <span className="font-semibold font-sans text-xs text-bone tracking-wide whitespace-nowrap">
+                    <div className="flex flex-col min-w-0">
+                      <span className="font-semibold font-sans text-[11px] sm:text-xs text-bone tracking-wide whitespace-nowrap">
                         {item.name}
                       </span>
                       {item.subtitle && (
-                        <span className="text-[10px] font-mono text-textMute whitespace-nowrap">
+                        <span className="hidden xs:inline text-[9px] sm:text-[10px] font-mono text-textMute whitespace-nowrap">
                           {item.subtitle}
                         </span>
                       )}
