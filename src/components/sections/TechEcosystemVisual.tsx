@@ -548,29 +548,25 @@ export const TechEcosystemVisual: React.FC<TechEcosystemVisualProps> = () => {
           )}
         </svg>
 
-        {/* Standalone Borderless Central Portrait Photo */}
+        {/* Standalone Borderless Enlarged Central Portrait Photo */}
         <div
-          className="relative z-20 transition-transform duration-300 ease-out"
+          className="relative z-20 transition-transform duration-300 ease-out flex flex-col items-center"
           style={{
             transform: shouldReduceMotion
               ? "none"
               : `translate3d(${mousePos.x * 12}px, ${mousePos.y * 12}px, 0px)`,
           }}
         >
-          <div className="absolute -inset-3 sm:-inset-5 rounded-3xl bg-gradient-to-r from-ember-500/25 via-ember-400/15 to-ember-500/25 blur-xl pointer-events-none" />
-          <div className="relative w-[150px] h-[195px] xs:w-[175px] xs:h-[230px] sm:w-[265px] sm:h-[340px] md:w-[310px] md:h-[395px] rounded-2xl overflow-hidden shadow-[0_25px_60px_rgba(0,0,0,0.95)] group border border-ink-700/80">
+          <div className="absolute -inset-4 sm:-inset-6 rounded-full bg-gradient-to-tr from-ember-500/20 via-amber-500/15 to-transparent blur-2xl pointer-events-none" />
+          <div className="relative w-[210px] h-[275px] xs:w-[230px] xs:h-[300px] sm:w-[280px] sm:h-[365px] md:w-[330px] md:h-[430px] overflow-hidden group border-0 shadow-none">
             <img
               src={`${getBasePath()}/images/monifa-sultana.jpg`}
               alt="Monifa Sultana — Web Developer & IT Lecturer"
-              width={310}
-              height={395}
-              className="w-full h-full object-cover object-top rounded-2xl transition-transform duration-700 group-hover:scale-105"
+              width={330}
+              height={430}
+              className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105 filter drop-shadow-[0_20px_35px_rgba(0,0,0,0.85)]"
               loading="eager"
             />
-            <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink-950 via-ink-950/85 to-transparent p-2.5 sm:p-4 text-center pt-8 sm:pt-10">
-              <div className="text-xs sm:text-base md:text-lg font-serif text-bone font-medium tracking-tight">Monifa Sultana</div>
-              <div className="text-[10px] sm:text-xs font-mono text-ember-400 font-semibold tracking-wide">Web Dev & IT Lecturer</div>
-            </div>
           </div>
         </div>
 
