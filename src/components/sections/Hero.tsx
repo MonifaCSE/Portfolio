@@ -1,7 +1,7 @@
 import * as React from "react";
 import dynamic from "next/dynamic";
 import { Button } from "@/components/ui/Button";
-import { ArrowDown } from "lucide-react";
+import { ArrowDown, MapPin, GraduationCap } from "lucide-react";
 import { Project, Experience } from "@/lib/schemas";
 
 const TechEcosystemVisual = dynamic(
@@ -143,28 +143,36 @@ export const Hero: React.FC<HeroProps> = ({ siteData, projects = [], experience 
       </div>
 
       {/* Bottom Status Strip */}
-      <div className="w-full hairline-top pt-3 pb-2">
-        <div className="max-w-content mx-auto px-5 sm:px-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 text-xs font-mono text-textMute">
-          <div className="flex flex-wrap items-center gap-3 sm:gap-4">
+      <div className="w-full hairline-top pt-3 pb-2.5">
+        <div className="max-w-content mx-auto px-5 sm:px-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs font-mono text-textMute">
+          <div className="flex flex-wrap items-center gap-4 sm:gap-6">
             <div className="flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-ember-500 inline-block" />
-              <span>Currently — Web Developer at Sevix Global</span>
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+              </span>
+              <span className="font-medium text-bone">Available for Projects & Teaching</span>
             </div>
+
             <span className="hidden sm:inline text-ink-700">•</span>
-            <div className="flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-ember-500 inline-block" />
-              <span>IT Lecturer at AIMS Academy</span>
+
+            <div className="flex items-center gap-1.5 text-textSoft">
+              <MapPin className="w-3.5 h-3.5 text-ember-500 shrink-0" />
+              <span>Chattogram, Bangladesh</span>
+            </div>
+
+            <span className="hidden md:inline text-ink-700">•</span>
+
+            <div className="hidden md:flex items-center gap-1.5 text-textSoft">
+              <GraduationCap className="w-3.5 h-3.5 text-amber-400 shrink-0" />
+              <span>MSc in CSE (Pursuing) @ IIUC</span>
             </div>
           </div>
 
-          <div className="hidden xl:block">
-            MSc CSE, IIUC (pursuing)
-          </div>
-
-          <div className="hidden sm:flex items-center gap-1 hover:text-bone transition-colors cursor-pointer">
+          <div className="hidden sm:flex items-center gap-1.5 hover:text-bone transition-colors">
             <a href="#intro" className="flex items-center gap-1">
-              <span>Scroll</span>
-              <ArrowDown className="w-3 h-3 animate-bounce" />
+              <span>Scroll down</span>
+              <ArrowDown className="w-3 h-3 animate-bounce text-ember-500" />
             </a>
           </div>
         </div>
