@@ -1,7 +1,7 @@
 import * as React from "react";
 import dynamic from "next/dynamic";
 import { Button } from "@/components/ui/Button";
-import { ArrowDown, MapPin, GraduationCap } from "lucide-react";
+import { ArrowDown, MapPin, Code2 } from "lucide-react";
 import { Project, Experience } from "@/lib/schemas";
 
 const TechEcosystemVisual = dynamic(
@@ -164,8 +164,8 @@ export const Hero: React.FC<HeroProps> = ({ siteData, projects = [], experience 
             <span className="hidden md:inline text-ink-700">•</span>
 
             <div className="hidden md:flex items-center gap-1.5 text-textSoft">
-              <GraduationCap className="w-3.5 h-3.5 text-amber-400 shrink-0" />
-              <span>MSc in CSE (Pursuing) @ IIUC</span>
+              <Code2 className="w-3.5 h-3.5 text-ember-400 shrink-0" />
+              <span>Full-Stack & Database-driven Web Apps</span>
             </div>
           </div>
 
