@@ -48,7 +48,8 @@ export const siteConfig = {
   socials: {
     github: { value: null, url: "https://github.com", confirmed: false },
     linkedin: { value: null, url: "https://linkedin.com", confirmed: false },
-    email: { value: null, address: "mailto:contact@placeholder.com", confirmed: false },
+    email: { value: "monifasultana626@gmail.com", address: "mailto:monifasultana626@gmail.com", confirmed: true },
+    whatsapp: { value: "01791662418", url: "https://wa.me/8801791662418", confirmed: true },
   },
 
   location: {

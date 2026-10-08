@@ -68,8 +68,30 @@ export const Footer: React.FC<FooterProps> = ({ siteData }) => {
             <p className="text-sm text-textMute">
               Open for professional inquiries, teaching engagements, and software engineering opportunities.
             </p>
+            <div className="pt-1 space-y-2 text-xs font-mono">
+              <div>
+                <a
+                  href="https://wa.me/8801791662418"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-emerald-400 hover:text-emerald-300 transition-colors inline-flex items-center gap-1.5 font-medium"
+                >
+                  <span>WhatsApp: 01791662418</span>
+                  <span>↗</span>
+                </a>
+              </div>
+              <div>
+                <a
+                  href="mailto:monifasultana626@gmail.com"
+                  className="text-ember-400 hover:text-ember-300 transition-colors inline-flex items-center gap-1.5 font-medium"
+                >
+                  <span>Email: monifasultana626@gmail.com</span>
+                  <span>↗</span>
+                </a>
+              </div>
+            </div>
             <div className="pt-2">
-              <TextLink href="/#contact">Get in Touch →</TextLink>
+              <TextLink href="/#contact">Send a Message →</TextLink>
             </div>
           </div>
         </div>
